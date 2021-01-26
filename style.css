@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(#141e30, #101922);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/* Login Box*/
+.Login {
+    margin-top: 3;
+    width: 1100px;
+    padding: 20;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    font-size:12px;
+    color: #ffffff;
+    z-index: 4;
+}
+
+/* Position der Labels*/
+.Inputfield {
+    position: relative;
+}
+
+/* Design der Textfelder*/
+.Inputfield input {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+/* Label des Textfeldes*/
+.Inputfield label {
+    margin: 10;
+    position: absolute;
+    top:0;
+    left: 450;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/* Verschieben des Labels*/
+.Inputfield input:focus ~ label,
+.Inputfield input:valid ~ label {
+    top: -20px;
+    left: 450;
+    color: #02aaf2;
+    font-size: 12px;
+}
+.select{
+    border: none;
+}
+
+/*Pfeile des Textfeldes entfernen*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Submit Button*/
+#submit {
+    color: white;
+    padding: 8px 20px;
+    border-radius: 7px;
+    overflow: hidden;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border: none;
+}
