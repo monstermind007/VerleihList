@@ -4,16 +4,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form>
-    <div class="Inputfield">
-        <input type="email" name="email" required autocomplete="off">
-        <label>E-Mail</label>
+<center>
+    <div class="Login">
+        <form action="<?php echo$_SERVER["PHP_SELF"] ?>" method="post">
+            <div class="Inputfield">
+                <input type="email" name="email" required autocomplete="off">
+                <label>E-Mail</label>
+            </div>
+            <div class="Inputfield">
+                <input type="password" name="password" required autocomplete="off">
+                <label>Passwort</label>
+            </div>
+            <input type="submit" value="Login" id="submit">
     </div>
-    <div class="Inputfield">
-        <input type="password" name="password" required autocomplete="off">
-        <label>Passwort</label>
-    </div>
-</form>
+</center>
+<?php
+$servername = "localhost";
+$username = "";
+$password = "1McR2.71";
+$dbname = "materialverleihDB";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+die("Connection failed: " . $conn->connect_error);
+}
+
+
+
+
+?>
 </body>
 </html>
