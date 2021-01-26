@@ -1,0 +1,58 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"668f7ab3-ee6b-4418-9c0a-0f322cd11faa\" name=\"Default Changelist\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1nbIWEyi66XvvSNJs1xOXv71qYy\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"DefaultHtmlFileTemplate\" value=\"HTML File\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"preferences.pluginManager\" />\r\n    <property name=\"vue.rearranger.settings.migration\" value=\"true\" />\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration>C:\\Users\\Monstermind007\\AppData\\Roaming\\Subversion</configuration>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"668f7ab3-ee6b-4418-9c0a-0f322cd11faa\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1611652392727</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1611652392727</updated>\r\n      <workItem from=\"1611652393790\" duration=\"491000\" />\r\n      <workItem from=\"1611652894464\" duration=\"2406000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"2669\" y=\"260\" key=\"FileChooserDialogImpl\" timestamp=\"1611652976316\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"2669\" y=\"260\" key=\"FileChooserDialogImpl/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040\" timestamp=\"1611652976316\" />\r\n    <state x=\"2758\" y=\"417\" key=\"Github.ShareDialog\" timestamp=\"1611655345931\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"2758\" y=\"417\" key=\"Github.ShareDialog/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040\" timestamp=\"1611655345931\" />\r\n    <state x=\"2663\" y=\"224\" key=\"Github.UntrackedFilesDialog\" timestamp=\"1611655401870\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"2663\" y=\"224\" key=\"Github.UntrackedFilesDialog/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040\" timestamp=\"1611655401870\" />\r\n    <state x=\"2381\" y=\"164\" key=\"SettingsEditor\" timestamp=\"1611652880744\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"2381\" y=\"164\" key=\"SettingsEditor/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040\" timestamp=\"1611652880744\" />\r\n    <state x=\"2685\" y=\"205\" width=\"407\" height=\"629\" key=\"svn.repositoryBrowser\" timestamp=\"1611652786583\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"2685\" y=\"205\" width=\"407\" height=\"629\" key=\"svn.repositoryBrowser/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040\" timestamp=\"1611652786583\" />\r\n    <state x=\"2696\" y=\"292\" key=\"svn4idea.import.options\" timestamp=\"1611652781820\">\r\n      <screen x=\"1920\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"2696\" y=\"292\" key=\"svn4idea.import.options/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040\" timestamp=\"1611652781820\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f1220621eab61e807761bb839ca40124a6a255c0)
++++ b/.idea/workspace.xml	(date 1611658976602)
+@@ -9,6 +9,9 @@
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+     <option name="LAST_RESOLUTION" value="IGNORE" />
+   </component>
++  <component name="ComposerSettings">
++    <execution />
++  </component>
+   <component name="FileTemplateManagerImpl">
+     <option name="RECENT_TEMPLATES">
+       <list>
+@@ -52,33 +55,10 @@
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="Vcs.Log.Tabs.Properties">
++    <option name="oldMeFiltersMigrated" value="true" />
++  </component>
+   <component name="VcsManagerConfiguration">
+     <option name="LAST_COMMIT_MESSAGE" value="" />
+   </component>
+-  <component name="WindowStateProjectService">
+-    <state x="2669" y="260" key="FileChooserDialogImpl" timestamp="1611652976316">
+-      <screen x="1920" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="2669" y="260" key="FileChooserDialogImpl/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611652976316" />
+-    <state x="2758" y="417" key="Github.ShareDialog" timestamp="1611655345931">
+-      <screen x="1920" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="2758" y="417" key="Github.ShareDialog/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611655345931" />
+-    <state x="2663" y="224" key="Github.UntrackedFilesDialog" timestamp="1611655401870">
+-      <screen x="1920" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="2663" y="224" key="Github.UntrackedFilesDialog/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611655401870" />
+-    <state x="2381" y="164" key="SettingsEditor" timestamp="1611652880744">
+-      <screen x="1920" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="2381" y="164" key="SettingsEditor/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611652880744" />
+-    <state x="2685" y="205" width="407" height="629" key="svn.repositoryBrowser" timestamp="1611652786583">
+-      <screen x="1920" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="2685" y="205" width="407" height="629" key="svn.repositoryBrowser/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611652786583" />
+-    <state x="2696" y="292" key="svn4idea.import.options" timestamp="1611652781820">
+-      <screen x="1920" y="0" width="1920" height="1040" />
+-    </state>
+-    <state x="2696" y="292" key="svn4idea.import.options/3840.0.1920.1040/1920.0.1920.1040/0.0.1920.1040@1920.0.1920.1040" timestamp="1611652781820" />
+-  </component>
+ </project>
+\ No newline at end of file
