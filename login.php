@@ -10,16 +10,29 @@ if ($conn->connect_error) {die("ERROR: ".$conn->connect_error);}
 mysqli_query($conn, "set names 'utf8'");
 mysqli_select_db($mysql_database);
 
+/***********************************************************************************************************************/
 
-// Info einschreiben
-$sql = "INSERT INTO TabelleName (Zeile1, Zeile2, Zeile3)
-        VALUES ('Inhalt1', 'Inhalt2', 'Inhalt3')";
+// Info speichern (registrieren)
+if ($conn) {
+    $sql = "INSERT INTO account (ID, Username, Password)
+    	VALUES ('', '$username', '$password')";
+}
+else {
+    die("Connection failed: " . mysqli_connect_error());
+}
+if (mysqli_query($conn, $sql)) {
+    echo "Registration erfolgreich!";
+}
+else {
+    echo "Error creating database: " . mysqli_error($conn);
+}
 
 $result = mysqli_query($conn, $sql);
 if(!$result) {die('Error: '.mysqli_error($conn));}
 
+/***********************************************************************************************************************/
 
-// Info Lesen
+// Info Lesen (login)
 $sql = "SELECT Zeile1, Zeile2, Zeile3 FROM TabelleName";
 $ergibnis = $conn->query($sql);
 
@@ -34,6 +47,8 @@ if (!empty($passwort) || !empty($username)) {                    // Wenn Passwor
         $passwort_db = $row['Password'];
         $username_db = $row['Username'];
     }
-    mysqli_close();
+
+/***********************************************************************************************************************/
 }
+mysqli_close();
 ?>

@@ -25,7 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+ SQL-Code test" />
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+ SQL-Code test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,7 +67,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="gitlive.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -100,6 +103,7 @@
       <workItem from="1611661230264" duration="1344000" />
       <workItem from="1611910060108" duration="109000" />
       <workItem from="1611910189028" duration="1202000" />
+      <workItem from="1611911421744" duration="931000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -143,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611911356196</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="+ SQL-Code test">
+      <created>1611911693256</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1611911693256</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,7 +186,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="origin/DB" />
                       </list>
                     </value>
                   </entry>
