@@ -26,7 +26,6 @@ $ergibnis = $conn->query($sql);
 if (!empty($passwort) || !empty($username)) {                    // Wenn Password oder Username ist nicht leer, dann
     $sql = "SELECT Username, Password FROM account WHERE Username = '$username' AND Password = '$passwort'";
     $result = mysqli_query($conn, $sql);
-
     if (!$result) {
         printf("Error:%s\n", mysqli_error($conn));
         exit();

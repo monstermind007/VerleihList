@@ -25,10 +25,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+ test1 SQL">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-    </list>
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+ SQL-Code test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +99,7 @@
       <workItem from="1611658215849" duration="1634000" />
       <workItem from="1611661230264" duration="1344000" />
       <workItem from="1611910060108" duration="109000" />
-      <workItem from="1611910189028" duration="907000" />
+      <workItem from="1611910189028" duration="1202000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -139,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611662345985</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="+ SQL-Code test">
+      <created>1611911356196</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1611911356196</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -191,6 +195,7 @@
     <MESSAGE value="+ test2" />
     <MESSAGE value="+ test SQL" />
     <MESSAGE value="+ test1 SQL" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ test1 SQL" />
+    <MESSAGE value="+ SQL-Code test" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ SQL-Code test" />
   </component>
 </project>
