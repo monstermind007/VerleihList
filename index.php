@@ -6,6 +6,7 @@
 <body>
 <center>
     <div class="Login">
+        <h1>Login</h1>
         <form action="<?php echo$_SERVER["PHP_SELF"] ?>" method="post">
             <div class="Inputfield">
                 <input type="email" name="email" required autocomplete="off">
@@ -17,23 +18,5 @@
             </div>
             <input type="submit" value="Login" id="submit">
     </div>
-</center>
-<?php
-$servername = "localhost";
-$username = "";
-$password = "1McR2.71";
-$dbname = "materialverleihDB";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
-
-
-
-
-?>
 </body>
 </html>
