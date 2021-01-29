@@ -1,27 +1,25 @@
 <?php
 
-$mysql_server_name='localhost';
-$mysql_username='root';
-$mysql_password='123456';
-$mysql_database='Mydb';
+$servername='134.255.220.55:3306';
+$username='materiallisteDB';
+$password='1McR2.71';
+$database='materialverleihDB';
 
-$conn = mysqli_connect($mysql_server_name, $mysql_username, $mysql_password);
-if ($conn->connect_error) {die("ERROR: ".$conn->connect_error);}
+$conn = new mysqli($servername,$username,$password,$database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully<br>";
+$sql = "SELECT EMail FROM personen WHERE Name='Admin'";
+$result = $conn->query($sql);
 
-mysqli_query($conn, "set names 'utf8'");
-mysqli_select_db($mysql_database);
-
-// Info einschreiben
-$sql = "INSERT INTO TabelleName (Zeile1, Zeile2, Zeile3)
-        VALUES ('Inhalt1', 'Inhalt2', 'Inhalt3')";
-
-$erfolg = mysqli_query($conn, $sql);
-if(!$erfolg) {die('Error: '.mysqli_error($conn));}
-
-// Info Lesen
-$sql = "SELECT Zeile1, Zeile2, Zeile3 FROM TabelleName";
-$ergibnis = $conn->query($sql);
-
-mysqli_close();
-
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "E-Mail: " . $row["EMail"]."<br>";
+    }
+} else {
+    echo "0 results";
+}
+$conn->close();
 ?>
