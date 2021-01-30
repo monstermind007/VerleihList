@@ -31,37 +31,9 @@
         <div class="main_container">
             <div class="main__title">
                 <center>
-                    <h1>Schüler Hinzufügen</h1>
+                    <h1>Profil bearbeiten</h1>
                 </center>
             </div>
-            <?php
-            if (isset($_POST["registrierung"])) {
-                $vorname = $_POST["vorname"];
-                $nachname = $_POST["nachname"];
-                $telefon = $_POST["telefon"];
-                $klasse = $_POST["klasse"];
-                $straße = $_POST["straße"];
-                $plz = $_POST["plz"];
-                $ort = $_POST["ort"];
-                $email = $_POST["email"];
-                $passwort = $_POST["passwort"];
-
-                $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                if(!$dbconnection)
-                {
-                    error_log("Fehler beim Verbinden der Datenbank");
-                    die("Verbindungsfehler");
-                }
-
-                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password) VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort')";
-                if (mysqli_query($dbconnection, $eintrag)){
-                    print("Erfolgreich eingetragen");
-                }
-                else {
-                    die("Fehler!");
-                }
-            }
-            ?>
             <div class="Eingabe_addStudents">
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="Inputfield2">
