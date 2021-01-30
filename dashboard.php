@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 <body id="body">
 <div class="container">
@@ -29,7 +29,7 @@
     <main>
         <div class="main_container">
             <div class="main__title">
-                <h1>Hallo (Fehlende Session)<?php '.$Vorname.';?> </h1>
+                <h1>Hallo (Session fehlt) </h1>
             </div>
             <div class="Hauptteil">
                 ...
@@ -40,7 +40,7 @@
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1>(Fehlende Session)<?php '.$Vorname.'?></h1>
+            <h1>(Fehlende Session)<?php '.$Vorname.' ?></h1>
         </div>
 
         <div class="sidebar_menu">
@@ -85,8 +85,12 @@
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
-                <a href="#">Log out</a>
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                    <input type="submit"
+                           value="Abmelden" name="logoff" id="submit">
+                </form>
             </div>
+
         </div>
     </div>
 </div>
