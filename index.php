@@ -2,10 +2,11 @@
 if (isset($_SESSION["login"])) {
     if ("1" == $_SESSION["Rechte"]) {
         header("Location:dashboard.php");
-    } else {
+    } elseif ("2" == $_SESSION["Rechte"]) {
         header("Loaction:dashboard2.php");
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +35,12 @@ if (isset($_SESSION["login"])) {
             $_SESSION["ID"] = $sql_daten["ID"];
             $_SESSION["Rechte"] = $sql_daten["IstLehrer"];
             $_SESSION["Name"] = $sql_daten["Name"];
-
+            $_SESSION["Vorname"] = $sql_daten["Vorname"];
+            $_SESSION["Telefon"] = $sql_daten["Telefon"];
+            $_SESSION["Straße"] = $sql_daten["Straße"];
+            $_SESSION["Ort"] = $sql_daten["Ort"];
+            $_SESSION["PLZ"] = $sql_daten["PLZ"];
+            $_SESSION["Klasse"] = $sql_daten["Klasse"];
             $_SESSION["login"] = true;
             if ("1" == $_SESSION["Rechte"]) {
                 header("Location: dashboard.php");
@@ -59,6 +65,8 @@ if (isset($_SESSION["login"])) {
                 <label>Passwort</label>
             </div>
             <input type="submit" value="Login" name="login" id="submit">
+        </form>
     </div>
+</center>
 </body>
 </html>

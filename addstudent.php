@@ -1,3 +1,10 @@
+<?php
+// Wenn nicht Angemeldet weiterleitung zur Hauptseite
+session_start();
+if (!isset($_SESSION['login'])) {
+    header('Location:index.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="de">
 
@@ -109,7 +116,7 @@
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1>(Fehlende Session)<?php '.$Vorname.' ?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
         </div>
 
         <div class="sidebar_menu">
@@ -154,7 +161,15 @@
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
-                <a href="#">Log out</a>
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                    <input type="submit" value="Abmelden" name="logoff" id="logoff">
+                </form>
+                <?php
+                if (isset($_POST["logoff"])) {
+                    session_destroy();
+                    header("Location:index.php");
+                }
+                ?>
             </div>
         </div>
     </div>
