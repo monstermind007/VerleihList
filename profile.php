@@ -2,8 +2,8 @@
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body id="body">
@@ -13,9 +13,9 @@
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
-            <a class="active_link">Schüler</a>
+            <a>Schüler</a>
             <a>Materialliste</a>
-            <a>Profil</a>
+            <a class="active_link">Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
@@ -29,53 +29,51 @@
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="main__title">
-                <center>
-                    <h1>Profil bearbeiten</h1>
-                </center>
-            </div>
-            <div class="Eingabe_addStudents">
+            <div class="Main">
+                <?php
+                $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+                if (!$dbconnection) {
+                    error_log("Fehler beim Verbinden der Datenbank");
+                    die("Verbindungsfehler");
+                }
+
+                if (isset($_POST["ändern"])){
+                    $email = $_POST["email"];
+                    $telefon = $_POST["telefon"];
+                    $straße = $_POST["straße"];
+                    $ort = $_POST["ort"];
+                    $plz = $_POST["plz"];
+
+                    $sql_ändern ="UPDATE personen SET EMail ='" . $email . "', Telefon='" . $telefon . "',Straße = '" . $straße . "', Ort= '" . $ort . "', PLZ = '" . $plz . "' WHERE id = '" . $_SESSION['id'] . "' ";
+                    $db_ret_ändern = mysqli_query($dbconnection, $sql_ändern);
+                    echo "Ihre Daten wurden geändert!";
+                }
+                
+                ?>
+                <div class="main__title">
+                    <center>
+                        <h1>Profil bearbeiten</h1>
+                    </center>
+                </div>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                    <div class="Inputfield2">
-                        <input type="digits" name="vorname" required autocomplete="off">
-                        <label>Vorname</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="nachname" required autocomplete="off">
-                        <label>Nachname</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="telefon" required autocomplete="off">
-                        <label>Telefon</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="klasse" required autocomplete="off">
-                        <label>Klasse</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="straße" required autocomplete="off">
-                        <label>Straße & Hausnummer</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="plz" required autocomplete="off">
-                        <label>PLZ</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="ort" required autocomplete="off">
-                        <label>Ort</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="email" name="email" required autocomplete="off">
-                        <label>E-Mail</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="passwort" name="passwort" required autocomplete="off">
-                        <label>Passwort</label>
-                    </div>
-                    <input type="submit" value="Anlegen" name="registrierung" id="submit">
+                <div class="Inputfield2">
+                <input type="digits" id="email" placeholder="E-Mail">
+                </div>
+                <div class="Inputfield2">
+                <input type="digits" id="telefon" placeholder="Telefonnr.">
+                </div>
+                <div class="Inputfield2">
+                    <input type="digits" id="straße" placeholder="Straße & Hausnummer">
+                </div>
+                <div class="Inputfield2">
+                    <input type="digits" id="ort" placeholder="Ort">
+                </div>
+                <div class="Inputfield2">
+                    <input type="number" id="plz" placeholder="PLZ">
+                </div>
+                    <input type="submit" value="Ändern" name="ändern" id="submit2">
                 </form>
             </div>
-        </div>
     </main>
     <!-- Seitliche Navigation Links -->
     <div id="sidebar">
@@ -86,7 +84,7 @@
 
         <div class="sidebar_menu">
             <div class="sidebar_link active_menu_link">
-                <i class="fa fa-home"></i>
+                <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
             <h2>Schüler</h2>
@@ -96,7 +94,7 @@
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler anlegen</a>
+                <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -105,7 +103,7 @@
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Materialien Verwalten</a>
+                <a href="Materialliste.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
@@ -113,8 +111,12 @@
                 <a href="#">Nachrichten</a>
             </div>
             <div class="sidebar_link">
-                <i class="fa fa-briefcase"></i>
-                <a href="#">Daten ändern</a>
+                <i class="rechter_text"></i>
+                <a href="profile.php">Daten ändern</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
@@ -124,5 +126,4 @@
     </div>
 </div>
 </body>
-
 </html>
