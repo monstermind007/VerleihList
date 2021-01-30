@@ -29,11 +29,6 @@
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="main__title">
-                <center>
-                    <h1>Schüler Hinzufügen</h1>
-                </center>
-            </div>
             <?php
             if (isset($_POST["registrierung"])) {
                 $vorname = $_POST["vorname"];
@@ -62,7 +57,12 @@
                 }
             }
             ?>
-            <div class="Eingabe_addStudents">
+            <div class="Main">
+                <div class="main__title">
+                    <center>
+                        <h1>Schüler Hinzufügen</h1>
+                    </center>
+                </div><br><br>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="Inputfield2">
                         <input type="digits" name="vorname" required autocomplete="off">
