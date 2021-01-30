@@ -112,6 +112,10 @@
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
+                <a href="daten.php">Profildaten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
                 <a href="profile.php">Daten ändern</a>
             </div>
             <div class="sidebar_link">
