@@ -31,7 +31,7 @@ body {
 
 /* Position der Labels*/
 .Inputfield {
-    position: relative;
+    position:relative;left:40%;
 }
 
 /* Design der Textfelder*/
@@ -51,7 +51,7 @@ body {
     margin: 10;
     position: absolute;
     top:0;
-    left: 95;
+    left: 0;
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
@@ -64,7 +64,7 @@ body {
 .Inputfield input:valid ~ label {
     top: -20px;
     left: 95;
-    color: #02aaf2;
+    color: #3ea175;
     font-size: 12px;
 }
 .select{
@@ -87,6 +87,7 @@ input[type=number]::-webkit-outer-spin-button {
     background: rgba(0,0,0,.5);
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border: none;
+    position:relative;left:40%;
 }
 
 
@@ -277,7 +278,73 @@ main {
 }
 
 .Hauptteil {
+    width: auto;
+    height: auto;
+    padding: 20;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    font-size:12px;
+    color: #ffffff;
+    z-index: 4;
     grid-template-columns: 1fr;
     margin-top: 30px;
     color: #ffffff;
+}
+
+.Eingabe_addStudents{
+    margin-left:auto;
+    margin-right:auto;
+    width: 500px;
+    height: 700px;
+    padding-top: 2em;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    font-size:12px;
+    color: #ffffff;
+    z-index: 4;
+    grid-template-columns: 1fr;
+    color: #ffffff;
+}
+/* Position der Labels*/
+.Inputfield2 {
+    position:relative;left:33%;
+}
+
+/* Design der Textfelder*/
+.Inputfield2 input {
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+/* Label des Textfeldes*/
+.Inputfield2 label {
+    margin: 10;
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+/* Verschieben des Labels*/
+.Inputfield2 input:focus ~ label,
+.Inputfield2 input:valid ~ label {
+    top: -20px;
+    left: 95;
+    color: #3ea175;
+    font-size: 12px;
+}
+.select{
+    border: none;
 }
