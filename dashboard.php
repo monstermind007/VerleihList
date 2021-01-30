@@ -4,13 +4,14 @@ include("dbconnect.php");
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>Inventurliste</title>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
 </head>
 <body id="body">
 <div class="container">
     <nav class="navigation_oben">
+        <div class="nav_icon" onclick="toggleSidebar()">
+        </div>
         <div class="navigation_oben__links">
             <a class="active_link">Dashboard</a>
             <a>Schüler</a>
@@ -23,6 +24,7 @@ include("dbconnect.php");
                 <i class="notification" aria-hidden="true"></i>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
+            </a>
         </div>
     </nav>
 
@@ -56,7 +58,7 @@ include("dbconnect.php");
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler anlegen</a>
+                <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -85,4 +87,3 @@ include("dbconnect.php");
 </div>
 </body>
 </html>
-
