@@ -7,10 +7,12 @@ if (!isset($_SESSION['login'])) {
 ?>
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="style.css"/>
 </head>
+
 <body id="body">
 <div class="container">
     <nav class="navigation_oben">
@@ -19,8 +21,8 @@ if (!isset($_SESSION['login'])) {
         <div class="navigation_oben__links">
             <a>Dashboard</a>
             <a>Schüler</a>
-            <a class="active_link">Materialliste</a>
-            <a>Profil</a>
+            <a>Materialliste</a>
+            <a class="active_link">Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
@@ -28,65 +30,40 @@ if (!isset($_SESSION['login'])) {
                 <i class="notification" aria-hidden="true"></i>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
-            </a>
         </div>
     </nav>
 
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="Hauptteil">
+            <div class="Main">
+                <div class="main__title">
+                    <center>
+                        <h1>Profil bearbeiten</h1>
+                    </center>
+                </div>
                 <?php
                 $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
+
+                $sql_data = "SELECT * FROM personen WHERE ID = '" . $_SESSION['ID'] . "' ";
+                $sql_data_res = mysqli_query($dbconnection, $sql_data);
+                $sql_array = mysqli_fetch_array($sql_data_res);
                 ?>
-                <br><br>
-                <a onclick="window.open('printdata.php')" id="print">Drucken</a>
-                <br><br>
-                <div class="main__title">
-                    <center>
-                        <h1>Materialliste</h1>
-                    </center>
-                </div><br><br>
-                <table class="table table-bordered print">
-                    <thead>
+                <table>
                     <tr>
-                        <th>ID</th>
-                        <th>Bezeichnung</th>
-                        <th>Gesamtanzahl</th>
-                        <th>Derzeitige Anzahl</th>
-                        <th>Letzte Inventur</th>
-                        <th>Lagerort</th>
-                        <th>Kategorie</th>
+                        <td>Nutzer-ID</td>
+                        <td><?php echo $sql_array["ID"];?></td>
+                        <td></td>
                     </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $ID = 1;
-                    $user_qry = "SELECT * from gegenstände";
-                    $user_res = mysqli_query($dbconnection, $user_qry);
-                    while ($user_data = mysqli_fetch_assoc($user_res)) {
-                        ?>
-                        <tr>
-                            <td><?php echo $user_data['ID']; ?></td>
-                            <td><?php echo $user_data['Bezeichnung']; ?></td>
-                            <td><?php echo $user_data['AnzahlGesamt']; ?></td>
-                            <td><?php echo $user_data['AnzahlMomentan']; ?></td>
-                            <td><?php echo $user_data['LetzteInventur']; ?></td>
-                            <td><?php echo $user_data['Lagerort']; ?></td>
-                            <td><?php echo $user_data['Kategorie']; ?></td>
-                        </tr>
-                        <?php
-                        $ID++;
-                    }
-                    ?>
-                    </tbody>
+                    <tr>
+                        <td>Vorname</td>
+                    </tr>
                 </table>
             </div>
-        </div>
     </main>
     <!-- Seitliche Navigation Links -->
     <div id="sidebar">
@@ -112,11 +89,11 @@ if (!isset($_SESSION['login'])) {
             <h2>Materialliste</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Materialliste.php">Liste</a>
+                <a href="#">Liste</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Materialien anlegen</a>
+                <a href="Materialliste.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
