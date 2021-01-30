@@ -100,7 +100,7 @@
                         <input type="passwort" name="passwort" required autocomplete="off">
                         <label>Passwort</label>
                     </div>
-                    <input type="submit" value="Anlegen" name="registrierung" id="submit">
+                    <input type="submit" value="Anlegen" name="registrierung" id="submit2">
                 </form>
             </div>
         </div>
@@ -114,7 +114,7 @@
 
         <div class="sidebar_menu">
             <div class="sidebar_link active_menu_link">
-                <i class="fa fa-home"></i>
+                <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
             <h2>Schüler</h2>
@@ -129,11 +129,11 @@
             <h2>Materialliste</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Liste</a>
+                <a href="Materialliste.php">Liste</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Materialien Verwalten</a>
+                <a href="#">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
@@ -141,8 +141,12 @@
                 <a href="#">Nachrichten</a>
             </div>
             <div class="sidebar_link">
-                <i class="fa fa-briefcase"></i>
-                <a href="#">Daten ändern</a>
+                <i class="rechter_text"></i>
+                <a href="profile.php">Daten ändern</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>

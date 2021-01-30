@@ -78,8 +78,20 @@ input[type=number]::-webkit-outer-spin-button {
     margin: 0;
 }
 
-/* Submit Button*/
+/* Submit Button Login*/
 #submit {
+    color: white;
+    padding: 8px 20px;
+    border-radius: 7px;
+    overflow: hidden;
+    background: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border: none;
+    position:relative;left:0%;
+}
+
+/*Submit Button allgemein*/
+#submit2 {
     color: white;
     padding: 8px 20px;
     border-radius: 7px;
@@ -399,4 +411,11 @@ th {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border: none;
     position:relative;left:2%;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #3ea175;
+    opacity: 1; /* Firefox */
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: #3ea175;
 }
