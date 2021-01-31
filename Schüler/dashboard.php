@@ -55,15 +55,6 @@ if (!isset($_SESSION['login'])) {
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
-            <h2>Schüler</h2>
-            <div class="sidebar_link">
-                <i class="rechter_text"></i>
-                <a href="#">Schüler Verwalten</a>
-            </div>
-            <div class="sidebar_link">
-                <i class="rechter_text"></i>
-                <a href="addstudent.php">Schüler anlegen</a>
-            </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
@@ -71,7 +62,11 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Materialien anlegen</a>
+                <a href="#">Alle Anträge</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="#">Antrag stellen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
