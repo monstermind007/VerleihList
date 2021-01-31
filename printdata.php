@@ -1,4 +1,5 @@
 <?php
+//Datenbank Anbindung
                 $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if(!$dbconnection)
                 {
@@ -9,6 +10,7 @@
     <!DOCTYPE html>
     <html>
     <head>
+        //Design für das Drucklayout
         <title>PHP Print</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,7 +21,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12"> //Tabelle Erzeugen
                 <h2>gegenstände</h2>
                 <table class="table table-bordered print">
                     <thead>
@@ -33,14 +35,14 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <?php
+                    <?php // Datenbank Anbindung zur gewünschten Tabelle
                     $ID=1;
                     $user_qry="SELECT * from gegenstände";
                     $user_res=mysqli_query($dbconnection,$user_qry);
                     while($user_data=mysqli_fetch_assoc($user_res))
                     {
                         ?>
-                        <tr>
+                        <tr>//Daten aus der Datenbank ausgeben
                             <td><?php echo $ID; ?></td>
                             <td><?php echo $user_data['ID']; ?></td>
                             <td><?php echo $user_data['Bezeichnung']; ?></td>
@@ -57,6 +59,7 @@
                 </table>
 
                 <div class="text-center">
+                    // Erstellt ein Button der ein Fenster zum drucken öffnet
                     <button onclick="window.print();" class="btn btn-primary" id="print-btn">Print</button>
                 </div>
             </div>
