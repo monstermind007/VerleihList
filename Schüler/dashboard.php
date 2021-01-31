@@ -18,7 +18,6 @@ if (!isset($_SESSION['login'])) {
         </div>
         <div class="navigation_oben__links">
             <a class="active_link">Dashboard</a>
-            <a>Schüler</a>
             <a>Materialliste</a>
             <a>Profil</a>
         </div>
@@ -75,15 +74,15 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../daten.php">Profildaten</a>
+                <a href="../Lehrer/daten.php">Profildaten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../profile.php">Daten ändern</a>
+                <a href="../Lehrer/profile.php">Daten ändern</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../profile_password.php">Passwort ändern</a>
+                <a href="../Lehrer/profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>

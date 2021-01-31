@@ -2,7 +2,7 @@
 if (isset($_SESSION["login"])) {
     if ("1" == $sql_daten["IstLehrer"]) {
         header("Location:Lehrer/dashboard.php");
-    } elseif ("1" == $sql_daten["IstLehrer"]) {
+    } elseif ("2" == $sql_daten["IstLehrer"]) {
         header("Loaction:Schüler/dashboard.php");
     }
 }
@@ -45,7 +45,7 @@ if (isset($_SESSION["login"])) {
             if ("1" == $sql_daten["IstLehrer"]) {
                 header("Location:Lehrer/dashboard.php");
             } elseif ("0" == $sql_daten["IstLehrer"]) {
-                header("Loaction:dashboard2.php");
+                header("Loaction:Schüler/dashboard2.php");
             }
         } else {
             echo "Falsche Daten";

@@ -2,7 +2,7 @@
 // Wenn nicht Angemeldet weiterleitung zur Hauptseite
 session_start();
 if (!isset($_SESSION['login'])) {
-    header('Location:index.php');
+    header('Location:../index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ if (!isset($_SESSION['login'])) {
 
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 
 <body id="body">
@@ -44,46 +44,42 @@ if (!isset($_SESSION['login'])) {
                     die("Verbindungsfehler");
                 }
 
-                if (isset($_POST["ändern"])){
+                if (isset($_POST["ändern"])) {
                     $id = $_SESSION["ID"];
-                    $passwordold = $_POST["passwordold"];
-                    $passwordnew1 = $_POST["passwordnew1"];
-                    $passwordnew2 = $_POST["passwordnew2"];
+                    $email = $_POST["email"];
+                    $telefon = $_POST["telefon"];
+                    $straße = $_POST["straße"];
+                    $ort = $_POST["ort"];
+                    $plz = $_POST["plz"];
 
-                    if ($passwordnew1 == $passwordold){
-                        echo "Neues Passwort darf nicht dem alten entsprechen";
-                    }
-                    else {
-                        if ($passwordnew1 == $passwordnew2){
-                            $ändern = "UPDATE personen SET Password = '" . $passwordnew1 . "' WHERE ID = '" . $id . "'";
-                            $sql_res_query = mysqli_query($dbconnection, $ändern);
-                            echo "Passwort wurde erfolgreich geändert!";
-                        }
-                        else{
-                            echo "Die Passwörter stimmen nicht überein";
-                        }
-                    }
+                    $sql_ändern = "UPDATE personen SET EMail ='" . $email . "', Telefon='" . $telefon . "',Straße = '" . $straße . "', Ort= '" . $ort . "', PLZ = '" . $plz . "' WHERE id = '" . $_SESSION['ID'] . "' ";
+                    $db_ret_ändern = mysqli_query($dbconnection, $sql_ändern);
+                    echo "Ihre Daten wurden geändert!";
                 }
+
                 ?>
                 <div class="main__title">
                     <center>
-                        <h1>Passwort ändern</h1>
-                    </center><br>
+                        <h1>Profil bearbeiten</h1>
+                    </center>
                 </div>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                <div class="Inputfield2">
-                    <input type="password" name="passwordold" required autocomplete="off">
-                    <label>Aktuelles Passwort</label>
-                </div>
-                <div class="Inputfield2">
-                    <input type="password" name="passwordnew1" required autocomplete="off">
-                    <label>Neues Passwort</label>
-                </div>
-                <div class="Inputfield2">
-                    <input type="password" name="passwordnew2" required autocomplete="off">
-                    <label>Passwort bestätigen</label>
-                </div>
-                <input type="submit" value="Ändern" name="ändern" id="submit2">
+                    <div class="Inputfield2">
+                        <input type="email" name="email" placeholder="E-Mail">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="number" name="telefon" placeholder="Telefonnr.">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="digits" name="straße" placeholder="Straße & Hausnummer">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="digits" name="ort" placeholder="Ort">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="number" name="plz" placeholder="PLZ">
+                    </div>
+                    <input type="submit" value="Ändern" name="ändern" id="submit2">
                 </form>
             </div>
     </main>
@@ -91,13 +87,13 @@ if (!isset($_SESSION['login'])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
 
         <div class="sidebar_menu">
             <div class="sidebar_link active_menu_link">
                 <i class="rechter_text"></i>
-                <a href="Lehrer/dashboard.php">Dashboard</a>
+                <a href="dashboard.php">Dashboard</a>
             </div>
             <h2>Schüler</h2>
             <div class="sidebar_link">
@@ -106,7 +102,7 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Lehrer/addstudent.php">Schüler anlegen</a>
+                <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -115,7 +111,7 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Lehrer/Materialliste.php">Materialien anlegen</a>
+                <a href="Materialliste.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
@@ -142,7 +138,7 @@ if (!isset($_SESSION['login'])) {
                 <?php
                 if (isset($_POST["logoff"])) {
                     session_destroy();
-                    header("Location:index.php");
+                    header("Location:../index.php");
                 }
                 ?>
             </div>
