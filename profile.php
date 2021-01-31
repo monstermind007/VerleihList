@@ -44,18 +44,19 @@ if (!isset($_SESSION['login'])) {
                     die("Verbindungsfehler");
                 }
 
-                if (isset($_POST["ändern"])){
+                if (isset($_POST["ändern"])) {
+                    $id = $_SESSION["ID"];
                     $email = $_POST["email"];
                     $telefon = $_POST["telefon"];
                     $straße = $_POST["straße"];
                     $ort = $_POST["ort"];
                     $plz = $_POST["plz"];
 
-                    $sql_ändern ="UPDATE personen SET EMail ='" . $email . "', Telefon='" . $telefon . "',Straße = '" . $straße . "', Ort= '" . $ort . "', PLZ = '" . $plz . "' WHERE id = '" . $_SESSION['id'] . "' ";
+                    $sql_ändern = "UPDATE personen SET EMail ='" . $email . "', Telefon='" . $telefon . "',Straße = '" . $straße . "', Ort= '" . $ort . "', PLZ = '" . $plz . "' WHERE id = '" . $_SESSION['ID'] . "' ";
                     $db_ret_ändern = mysqli_query($dbconnection, $sql_ändern);
                     echo "Ihre Daten wurden geändert!";
                 }
-                
+
                 ?>
                 <div class="main__title">
                     <center>
@@ -63,21 +64,21 @@ if (!isset($_SESSION['login'])) {
                     </center>
                 </div>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                <div class="Inputfield2">
-                <input type="digits" id="email" placeholder="E-Mail">
-                </div>
-                <div class="Inputfield2">
-                <input type="digits" id="telefon" placeholder="Telefonnr.">
-                </div>
-                <div class="Inputfield2">
-                    <input type="digits" id="straße" placeholder="Straße & Hausnummer">
-                </div>
-                <div class="Inputfield2">
-                    <input type="digits" id="ort" placeholder="Ort">
-                </div>
-                <div class="Inputfield2">
-                    <input type="number" id="plz" placeholder="PLZ">
-                </div>
+                    <div class="Inputfield2">
+                        <input type="email" name="email" placeholder="E-Mail">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="number" name="telefon" placeholder="Telefonnr.">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="digits" name="straße" placeholder="Straße & Hausnummer">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="digits" name="ort" placeholder="Ort">
+                    </div>
+                    <div class="Inputfield2">
+                        <input type="number" name="plz" placeholder="PLZ">
+                    </div>
                     <input type="submit" value="Ändern" name="ändern" id="submit2">
                 </form>
             </div>
@@ -86,7 +87,7 @@ if (!isset($_SESSION['login'])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
 
         <div class="sidebar_menu">
