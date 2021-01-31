@@ -2,7 +2,7 @@
 // Wenn nicht Angemeldet weiterleitung zur Hauptseite
 session_start();
 if (!isset($_SESSION['login'])) {
-    header('Location:index.php');
+    header('Location:../index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ if (!isset($_SESSION['login'])) {
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
 </head>
 
 <body id="body">
@@ -150,15 +150,15 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="daten.php">Profildaten</a>
+                <a href="../daten.php">Profildaten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="profile.php">Daten ändern</a>
+                <a href="../profile.php">Daten ändern</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="profile_password.php">Passwort ändern</a>
+                <a href="../profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
@@ -168,7 +168,7 @@ if (!isset($_SESSION['login'])) {
                 <?php
                 if (isset($_POST["logoff"])) {
                     session_destroy();
-                    header("Location:index.php");
+                    header('Location:../index.php');
                 }
                 ?>
             </div>
