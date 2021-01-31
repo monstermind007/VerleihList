@@ -45,7 +45,7 @@ if (!isset($_SESSION['login'])) {
                 }
 
                 if (isset($_POST["ändern"])){
-                    $id = $_SESSION["id"];
+                    $id = $_SESSION["ID"];
                     $passwordold = $_POST["passwordold"];
                     $passwordnew1 = $_POST["passwordnew1"];
                     $passwordnew2 = $_POST["passwordnew2"];
@@ -72,15 +72,15 @@ if (!isset($_SESSION['login'])) {
                 </div>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                 <div class="Inputfield2">
-                    <input type="digits" name="passwordold" required autocomplete="off">
+                    <input type="password" name="passwordold" required autocomplete="off">
                     <label>Aktuelles Passwort</label>
                 </div>
                 <div class="Inputfield2">
-                    <input type="digits" name="passwordnew1" required autocomplete="off">
+                    <input type="password" name="passwordnew1" required autocomplete="off">
                     <label>Neues Passwort</label>
                 </div>
                 <div class="Inputfield2">
-                    <input type="digits" name="passwordnew2" required autocomplete="off">
+                    <input type="password" name="passwordnew2" required autocomplete="off">
                     <label>Passwort bestätigen</label>
                 </div>
                 <input type="submit" value="Ändern" name="ändern" id="submit2">

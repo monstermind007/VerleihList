@@ -47,6 +47,7 @@ if (!isset($_SESSION['login'])) {
                 $ort = $_POST["ort"];
                 $email = $_POST["email"];
                 $passwort = $_POST["passwort"];
+                $Rechte = "0";
 
                 $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if(!$dbconnection)
@@ -55,7 +56,7 @@ if (!isset($_SESSION['login'])) {
                     die("Verbindungsfehler");
                 }
 
-                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password) VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort')";
+                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password, IstLehrer) VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort', '$Rechte')";
                 if (mysqli_query($dbconnection, $eintrag)){
                     print("Erfolgreich eingetragen");
                 }
@@ -80,7 +81,7 @@ if (!isset($_SESSION['login'])) {
                         <label>Nachname</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="digits" name="telefon" required autocomplete="off">
+                        <input type="number" name="telefon" required autocomplete="off">
                         <label>Telefon</label>
                     </div>
                     <div class="Inputfield2">
@@ -92,7 +93,7 @@ if (!isset($_SESSION['login'])) {
                         <label>Straße & Hausnummer</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="digits" name="plz" required autocomplete="off">
+                        <input type="number" name="plz" required autocomplete="off">
                         <label>PLZ</label>
                     </div>
                     <div class="Inputfield2">
@@ -104,7 +105,7 @@ if (!isset($_SESSION['login'])) {
                         <label>E-Mail</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="passwort" name="passwort" required autocomplete="off">
+                        <input type="password" name="passwort" required autocomplete="off">
                         <label>Passwort</label>
                     </div>
                     <input type="submit" value="Anlegen" name="registrierung" id="submit2">

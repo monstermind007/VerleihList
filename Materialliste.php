@@ -44,7 +44,7 @@ if (!isset($_SESSION['login'])) {
                 }
                 ?>
                 <br><br>
-                <a onclick="window.open('printdata.php')" id="print">Drucken</a>
+                <a onclick="window.open('printMaterialliste.php')" id="print">Drucken</a>
                 <br><br>
                 <div class="main__title">
                     <center>

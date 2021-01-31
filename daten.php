@@ -39,7 +39,7 @@ if (!isset($_SESSION['login'])) {
             <div class="Main">
                 <div class="main__title">
                     <center>
-                        <h1>Profil bearbeiten</h1>
+                        <h1>Profil Daten</h1>
                     </center>
                 </div>
                 <?php
@@ -53,15 +53,45 @@ if (!isset($_SESSION['login'])) {
                 $sql_data_res = mysqli_query($dbconnection, $sql_data);
                 $sql_array = mysqli_fetch_array($sql_data_res);
                 ?>
-                <table>
+                <table class="table table-bordered print">
+                    <thead>
                     <tr>
                         <td>Nutzer-ID</td>
-                        <td><?php echo $sql_array["ID"];?></td>
-                        <td></td>
+                        <td><?php echo $sql_array["ID"]; ?></td>
                     </tr>
                     <tr>
                         <td>Vorname</td>
+                        <td><?php echo $sql_array["Vorname"]; ?></td>
                     </tr>
+                    <tr>
+                        <td>Nachname</td>
+                        <td><?php echo $sql_array["Name"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Klasse</td>
+                        <td><?php echo $sql_array["Klasse"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><?php echo $sql_array["EMail"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Telefonnr.</td>
+                        <td><?php echo $sql_array["Telefon"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Straße</td>
+                        <td><?php echo $sql_array["Straße"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>PLT</td>
+                        <td><?php echo $sql_array["PLZ"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Ort</td>
+                        <td><?php echo $sql_array["Ort"];?></td>
+                    </tr>
+                    </thead>
                 </table>
             </div>
     </main>
@@ -69,7 +99,7 @@ if (!isset($_SESSION['login'])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
 
         <div class="sidebar_menu">
