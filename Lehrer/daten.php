@@ -2,7 +2,7 @@
 // Wenn nicht Angemeldet weiterleitung zur Hauptseite
 session_start();
 if (!isset($_SESSION['login'])) {
-    header('Location:index.php');
+    header('Location:../index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ if (!isset($_SESSION['login'])) {
 
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 
 <body id="body">
@@ -105,7 +105,7 @@ if (!isset($_SESSION['login'])) {
         <div class="sidebar_menu">
             <div class="sidebar_link active_menu_link">
                 <i class="rechter_text"></i>
-                <a href="Lehrer/dashboard.php">Dashboard</a>
+                <a href="dashboard.php">Dashboard</a>
             </div>
             <h2>Schüler</h2>
             <div class="sidebar_link">
@@ -114,7 +114,7 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Lehrer/addstudent.php">Schüler anlegen</a>
+                <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -123,7 +123,7 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Lehrer/Materialliste.php">Materialien anlegen</a>
+                <a href="Materialliste.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
@@ -150,7 +150,7 @@ if (!isset($_SESSION['login'])) {
                 <?php
                 if (isset($_POST["logoff"])) {
                     session_destroy();
-                    header("Location:index.php");
+                    header("Location:../index.php");
                 }
                 ?>
             </div>
