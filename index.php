@@ -1,54 +1,72 @@
-<?php
-$mysql_server_name='localhost';
-$mysql_username='root';
-$mysql_password='123456';
-$mysql_database='Mydb';
-
-$conn = mysqli_connect($mysql_server_name, $mysql_username, $mysql_password);
-if ($conn->connect_error) {die("ERROR: ".$conn->connect_error);}
-
-mysqli_query($conn, "set names 'utf8'");
-mysqli_select_db($mysql_database);
-
-/***********************************************************************************************************************/
-
-// Info speichern (registrieren)
-if ($conn) {
-    $sql = "INSERT INTO account (ID, Username, Password)
-    	VALUES ('', '$username', '$password')";
-}
-else {
-    die("Connection failed: " . mysqli_connect_error());
-}
-if (mysqli_query($conn, $sql)) {
-    echo "Registration erfolgreich!";
-}
-else {
-    echo "Error creating database: " . mysqli_error($conn);
-}
-
-$result = mysqli_query($conn, $sql);
-if(!$result) {die('Error: '.mysqli_error($conn));}
-
-/***********************************************************************************************************************/
-
-// Info Lesen (login)
-$sql = "SELECT Zeile1, Zeile2, Zeile3 FROM TabelleName";
-$ergibnis = $conn->query($sql);
-
-if (!empty($passwort) || !empty($username)) {                    // Wenn Password oder Username ist nicht leer, dann
-    $sql = "SELECT Username, Password FROM account WHERE Username = '$username' AND Password = '$passwort'";
-    $result = mysqli_query($conn, $sql);
-    if (!$result) {
-        printf("Error:%s\n", mysqli_error($conn));
-        exit();
+<?php session_start();
+if (isset($_SESSION["login"])) {
+    if ("1" == $sql_daten["IstLehrer"]) {
+        header("Location:Lehrer/dashboard.php");
+    } elseif ("2" == $sql_daten["IstLehrer"]) {
+        header("Loaction:Schüler/dashboard.php");
     }
-    while ($row = mysqli_fetch_assoc($result)) {
-        $passwort_db = $row['Password'];
-        $username_db = $row['Username'];
-    }
-
-/***********************************************************************************************************************/
 }
-mysqli_close();
+
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<center>
+    <?php
+    if (isset($_POST["login"])) {
+        $email = $_POST["email"];
+        $password = $_POST["password"];
+
+        $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+        if (!$dbconnection) {
+            error_log("Fehler beim Verbinden der Datenbank");
+            die("Verbindungsfehler");
+        }
+        $sql_abfrage = "SELECT * FROM personen WHERE EMail = '" . $email . "'";
+        $sql_res_email = mysqli_query($dbconnection, $sql_abfrage);
+        $sql_daten = mysqli_fetch_array($sql_res_email);
+
+        if ($sql_daten["Password"] == $password) {
+            $_SESSION["EMail"] = $sql_daten["EMail"];
+            $_SESSION["ID"] = $sql_daten["ID"];
+            $_SESSION["Rechte"] = $sql_daten["IstLehrer"];
+            $_SESSION["Name"] = $sql_daten["Name"];
+            $_SESSION["Vorname"] = $sql_daten["Vorname"];
+            $_SESSION["Telefon"] = $sql_daten["Telefon"];
+            $_SESSION["Straße"] = $sql_daten["Straße"];
+            $_SESSION["Ort"] = $sql_daten["Ort"];
+            $_SESSION["PLZ"] = $sql_daten["PLZ"];
+            $_SESSION["Klasse"] = $sql_daten["Klasse"];
+            $_SESSION["login"] = true;
+            if ("1" == $sql_daten["IstLehrer"]) {
+                header("Location:Lehrer/dashboard.php");
+            } elseif ("0" == $sql_daten["IstLehrer"]) {
+                header("Loaction:Schüler/dashboard2.php");
+            }
+        } else {
+            echo "Falsche Daten";
+
+        }
+    }
+    ?>
+    <div class="Login">
+        <h1>Login</h1>
+        <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+            <div class="Inputfield">
+                <input type="email" name="email" required autocomplete="off">
+                <label>E-Mail</label>
+            </div>
+            <div class="Inputfield">
+                <input type="password" name="password" required autocomplete="off">
+                <label>Passwort</label>
+            </div>
+            <input type="submit" value="Login" name="login" id="submit">
+        </form>
+    </div>
+</center>
+</body>
+</html>

@@ -25,9 +25,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+ SQL-Code test">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Ordnerstruktur angepasst">
+      <change afterPath="$PROJECT_DIR$/Schüler/anträge.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schüler/daten.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schüler/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Schüler/profile_password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +51,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Design" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,7 +73,15 @@
     <property name="settings.editor.selected.configurable" value="gitlive.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Lehrer" />
+    </key>
+  </component>
+  <component name="RunManager" selected="PHP Script.dashboard.php">
+    <configuration name="dashboard.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Lehrer/dashboard.php">
+      <method v="2" />
+    </configuration>
     <configuration name="login.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/login.php">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -81,7 +92,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP 脚本.login.php" />
+        <item itemvalue="PHP Script.login.php" />
+        <item itemvalue="PHP Script.dashboard.php" />
       </list>
     </recent_temporary>
   </component>
@@ -154,7 +166,42 @@
       <option name="project" value="LOCAL" />
       <updated>1611911693256</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Login (Session) 100%&#10;Datenausgabe Personen 100%&#10;Bug Fixes 100%&#10;OrdnerStruktur 100%">
+      <created>1612098848422</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1612098848422</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Login (Session) 100%&#10;Datenausgabe Personen 100%&#10;Bug Fixes 100%&#10;OrdnerStruktur 100%">
+      <created>1612098932329</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1612098932329</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ordnerstruktur angepasst">
+      <created>1612099183751</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1612099183751</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Ordnerstruktur angepasst">
+      <created>1612099463470</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1612099463470</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Ordnerstruktur angepasst">
+      <created>1612105126704</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1612105126704</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,6 +254,8 @@
     <MESSAGE value="+ test SQL" />
     <MESSAGE value="+ test1 SQL" />
     <MESSAGE value="+ SQL-Code test" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ SQL-Code test" />
+    <MESSAGE value="Login (Session) 100%&#10;Datenausgabe Personen 100%&#10;Bug Fixes 100%&#10;OrdnerStruktur 100%" />
+    <MESSAGE value="Ordnerstruktur angepasst" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ordnerstruktur angepasst" />
   </component>
 </project>
