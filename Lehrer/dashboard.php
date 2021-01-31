@@ -2,14 +2,14 @@
 // Wenn nicht Angemeldet weiterleitung zur Hauptseite
 session_start();
 if (!isset($_SESSION['login'])) {
-    header('Location:index.php');
+    header('Location:../index.php');
 }
 ?>
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 <body id="body">
 <div class="container">
@@ -17,9 +17,9 @@ if (!isset($_SESSION['login'])) {
         <div class="nav_icon" onclick="toggleSidebar()">
         </div>
         <div class="navigation_oben__links">
-            <a>Dashboard</a>
+            <a class="active_link">Dashboard</a>
             <a>Schüler</a>
-            <a class="active_link">Materialliste</a>
+            <a>Materialliste</a>
             <a>Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
@@ -35,56 +35,11 @@ if (!isset($_SESSION['login'])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
+            <div class="main__title">
+                <h1>Hallo <?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?> </h1>
+            </div>
             <div class="Hauptteil">
-                <?php
-                $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                if (!$dbconnection) {
-                    error_log("Fehler beim Verbinden der Datenbank");
-                    die("Verbindungsfehler");
-                }
-                ?>
-                <br><br>
-                <a onclick="window.open('printMaterialliste.php')" id="print">Drucken</a>
-                <br><br>
-                <div class="main__title">
-                    <center>
-                        <h1>Materialliste</h1>
-                    </center>
-                </div><br><br>
-                <table class="table table-bordered print">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Bezeichnung</th>
-                        <th>Gesamtanzahl</th>
-                        <th>Derzeitige Anzahl</th>
-                        <th>Letzte Inventur</th>
-                        <th>Lagerort</th>
-                        <th>Kategorie</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php
-                    $ID = 1;
-                    $user_qry = "SELECT * from gegenstände";
-                    $user_res = mysqli_query($dbconnection, $user_qry);
-                    while ($user_data = mysqli_fetch_assoc($user_res)) {
-                        ?>
-                        <tr>
-                            <td><?php echo $user_data['ID']; ?></td>
-                            <td><?php echo $user_data['Bezeichnung']; ?></td>
-                            <td><?php echo $user_data['AnzahlGesamt']; ?></td>
-                            <td><?php echo $user_data['AnzahlMomentan']; ?></td>
-                            <td><?php echo $user_data['LetzteInventur']; ?></td>
-                            <td><?php echo $user_data['Lagerort']; ?></td>
-                            <td><?php echo $user_data['Kategorie']; ?></td>
-                        </tr>
-                        <?php
-                        $ID++;
-                    }
-                    ?>
-                    </tbody>
-                </table>
+                ...
             </div>
         </div>
     </main>
@@ -92,7 +47,7 @@ if (!isset($_SESSION['login'])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
 
         <div class="sidebar_menu">
@@ -125,15 +80,15 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="daten.php">Profildaten</a>
+                <a href="../daten.php">Profildaten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="profile.php">Daten ändern</a>
+                <a href="../profile.php">Daten ändern</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="profile_password.php">Passwort ändern</a>
+                <a href="../profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
@@ -143,7 +98,7 @@ if (!isset($_SESSION['login'])) {
                 <?php
                 if (isset($_POST["logoff"])) {
                     session_destroy();
-                    header("Location:index.php");
+                    header("Location:../index.php");
                 }
                 ?>
             </div>

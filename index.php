@@ -1,7 +1,7 @@
 <?php session_start();
 if (isset($_SESSION["login"])) {
     if ("1" == $sql_daten["IstLehrer"]) {
-        header("Location:dashboard.php");
+        header("Location:Lehrer/dashboard.php");
     } elseif ("0" == $sql_daten["IstLehrer"]) {
         header("Loaction:dashboard2.php");
     }
@@ -43,7 +43,7 @@ if (isset($_SESSION["login"])) {
             $_SESSION["Klasse"] = $sql_daten["Klasse"];
             $_SESSION["login"] = true;
             if ("1" == $sql_daten["IstLehrer"]) {
-                header("Location: dashboard.php");
+                header("Location:Lehrer/dashboard.php");
             } elseif ("0" == $sql_daten["IstLehrer"]) {
                 header("Loaction:dashboard2.php");
             }
