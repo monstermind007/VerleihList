@@ -2,7 +2,7 @@
 if (isset($_SESSION["login"])) {
     if ("1" == $sql_daten["IstLehrer"]) {
         header("Location:Lehrer/dashboard.php");
-    } elseif ("0" == $sql_daten["IstLehrer"]) {
+    } elseif ("1" == $sql_daten["IstLehrer"]) {
         header("Loaction:Schüler/dashboard.php");
     }
 }
