@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Lehrer"]){
+if ("1" != $_SESSION["Admin"]){
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -27,7 +27,7 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
-            <a class="active_link">Schüler</a>
+            <a class="active_link">User</a>
             <a>Materialliste</a>
             <a>Profil</a>
         </div>
@@ -124,7 +124,7 @@ if (isset($_POST["logoff"])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
 
         <div class="sidebar_menu">
@@ -132,14 +132,30 @@ if (isset($_POST["logoff"])) {
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
-            <h2>Schüler</h2>
+            <h2>User</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler Verwalten</a>
+                <a href="students.php">Schüler Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler anlegen</a>
+                <a href="addstudent.php">Schüler anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="teachers.php">Lehrer Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addteacher.php">Lehrer Anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="admins.php">Admins Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addadmin.php">Admin anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -148,12 +164,12 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Materialien anlegen</a>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Nachrichten</a>
+                <a href="messages.php">Nachrichten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
@@ -177,5 +193,4 @@ if (isset($_POST["logoff"])) {
     </div>
 </div>
 </body>
-
 </html>

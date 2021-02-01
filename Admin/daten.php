@@ -24,10 +24,10 @@ if (isset($_POST["logoff"])) {
         <div class="nav_icon" onclick="toggleSidebar()">
         </div>
         <div class="navigation_oben__links">
-            <a class="active_link">Dashboard</a>
+            <a>Dashboard</a>
             <a>User</a>
             <a>Materialliste</a>
-            <a>Profil</a>
+            <a class="active_link">Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
@@ -42,13 +42,64 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="main__title">
-                <h1>Hallo <?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?> </h1>
+            <div class="Main">
+                <div class="main__title">
+                    <center>
+                        <h1>Profil Daten</h1>
+                    </center>
+                </div>
+                <?php
+                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+                if (!$dbconnection) {
+                    error_log("Fehler beim Verbinden der Datenbank");
+                    die("Verbindungsfehler");
+                }
+
+                $sql_data = "SELECT * FROM personen WHERE ID = '" . $_SESSION['ID'] . "' ";
+                $sql_data_res = mysqli_query($dbconnection, $sql_data);
+                $sql_array = mysqli_fetch_array($sql_data_res);
+                ?>
+                <table class="table table-bordered print">
+                    <thead>
+                    <tr>
+                        <td>Nutzer-ID</td>
+                        <td><?php echo $sql_array["ID"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Vorname</td>
+                        <td><?php echo $sql_array["Vorname"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Nachname</td>
+                        <td><?php echo $sql_array["Name"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Klasse</td>
+                        <td><?php echo $sql_array["Klasse"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><?php echo $sql_array["EMail"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Telefonnr.</td>
+                        <td><?php echo $sql_array["Telefon"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Straße</td>
+                        <td><?php echo $sql_array["Straße"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>PLT</td>
+                        <td><?php echo $sql_array["PLZ"]; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Ort</td>
+                        <td><?php echo $sql_array["Ort"];?></td>
+                    </tr>
+                    </thead>
+                </table>
             </div>
-            <div class="Hauptteil">
-                ...
-            </div>
-        </div>
     </main>
     <!-- Seitliche Navigation Links -->
     <div id="sidebar">

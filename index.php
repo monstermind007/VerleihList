@@ -5,6 +5,9 @@ if (isset($_SESSION["login"])) {
     } elseif ("1" == $_SESSION["Schueler"]) {
         header("Location:Schueler/dashboard.php");
     }
+    elseif ("1" == $_SESSION["Admin"]) {
+        header("Location:Admin/dashboard.php");
+    }
 }
 
 ?>
@@ -48,6 +51,9 @@ if (isset($_SESSION["login"])) {
                 header("Location:Lehrer/dashboard.php");
             } elseif ("1" == $_SESSION["Schueler"]) {
                 header("Location:Schueler/dashboard.php");
+            }
+            elseif ("1" == $_SESSION["Admin"]) {
+                header("Location:Admin/dashboard.php");
             }
         } else {
             echo "Falsche Daten";

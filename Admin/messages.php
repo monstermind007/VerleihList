@@ -24,10 +24,10 @@ if (isset($_POST["logoff"])) {
         <div class="nav_icon" onclick="toggleSidebar()">
         </div>
         <div class="navigation_oben__links">
-            <a class="active_link">Dashboard</a>
+            <a>Dashboard</a>
             <a>User</a>
             <a>Materialliste</a>
-            <a>Profil</a>
+            <a class="active_link">Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">

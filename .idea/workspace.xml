@@ -25,22 +25,18 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Logout Fehler behoben">
-      <change afterPath="$PROJECT_DIR$/Admin/dashboard.php" afterDir="false" />
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Rechteverteilung">
+      <change afterPath="$PROJECT_DIR$/Admin/addadmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/addstudent.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/addteacher.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/daten.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/messages.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/profile.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/profile_password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/Materialliste.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lehrer/addstudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/addstudent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/daten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/printMaterialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/printMaterialliste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/Materialliste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/anträge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/daten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +137,7 @@
       <workItem from="1611911421744" duration="931000" />
       <workItem from="1612171314278" duration="1114000" />
       <workItem from="1612173990580" duration="5554000" />
-      <workItem from="1612186120531" duration="1120000" />
+      <workItem from="1612186120531" duration="3971000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -269,7 +265,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612186320012</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Rechteverteilung">
+      <created>1612187469662</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1612187469662</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,14 +332,15 @@
     <MESSAGE value="Für Kaiaiaiaia zum Debuggen" />
     <MESSAGE value="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN" />
     <MESSAGE value="Logout Fehler behoben" />
-    <option name="LAST_COMMIT_MESSAGE" value="Logout Fehler behoben" />
+    <MESSAGE value="Rechteverteilung" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rechteverteilung" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
