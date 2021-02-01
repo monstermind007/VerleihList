@@ -51,4 +51,10 @@ if (!empty($passwort) || !empty($username)) {                    // Wenn Passwor
 /***********************************************************************************************************************/
 }
 mysqli_close();
+function fensterOeffnen () {
+    var text ='<p></p>';
+    var Nachrichten = window.open("about:blank", "Nachrichten", "width=300,height=400,left=100,top=200");
+    Nachrichten.document.write(text);
+    Nachrichten.focus();
+}
 ?>
