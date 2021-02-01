@@ -39,7 +39,8 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="Hauptteil">
                 <?php
-                @$dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");    //Die momentane verbindung
+                //@$dbconnection = mysqli_connect("localhost", "root", "", "materialverleihDB"); //Zum testen weil der Server weg ist
                 if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
@@ -47,25 +48,52 @@ if (!isset($_SESSION['login'])) {
                 ?>
                 <br>
                 <table class="table table-bordered print">
-                <thead>
+                    <thead>
                     <tr>
                         <th>Neuer Ausleihantrag</th>
                         <th>Antrag auf frühere Abgabe</th>
                     </tr>
-                <tbody>
+                    <tbody>
                     <tr>
                         <td>
                             <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                                <select name="kategorie">
-                                    <option value="" selected="selected">Kategorien</option>
+                                <select name="Kategorie" id="kategorie" data-child-id="gegenstand" class="dependent-selects__parent">
+                                    <option value="" selected="selected">-Kategorien-</option>
                                     <?php
-                                        for($i=0;$i<10;$i++){                                                           // Später Kategorien aus Datenbank hohlen,
-                                            echo "<option value='$i'>$i</option>";                                      // erstmal eine placeholder Schleife.
+                                    $sql_kategorie = "SELECT ID, Name FROM kategorien";
+                                    $sql_data_kategorie = mysqli_query($dbconnection,$sql_kategorie);
+                                    $sql_rows_kategorie = mysqli_num_rows($sql_data_kategorie);
+                                    $sql_array_kategorie = mysqli_fetch_all($sql_data_kategorie,MYSQLI_BOTH);
+
+                                    for($i=0;$i<$sql_rows_kategorie;$i++){
+                                        $k = $i+1;                                                                  // Leider ist Mathematik in sql befehlen nicht möglich -.-
+                                        $sql_item = "SELECT ID, Bezeichnung FROM gegenstände WHERE Kategorie='$k'";
+                                        $sql_data_item = mysqli_query($dbconnection,$sql_item);
+                                        $sql_rows_item = mysqli_num_rows($sql_data_item);
+                                        $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
+
+                                        $data_child_options="";
+                                        if($sql_rows_item > 0 && $sql_rows_item != 1) {
+                                            $data_child_options = $sql_array_item[0][0] . "|#";
+                                        } elseif ($sql_rows_item == 1){
+                                            $data_child_options = $sql_array_item[0][0];
                                         }
+                                        if($sql_rows_item > 2) {
+                                            for ($j = 1; $j < $sql_rows_item - 1; $j++) {
+                                                $data_child_options .= $sql_array_item[$j][0] . "|#";
+                                            }
+                                        }
+                                        if($sql_rows_item > 1) {
+                                            $data_child_options .= $sql_array_item[$sql_rows_item-1][0];
+                                        }
+                                        $data1 = $sql_array_kategorie[$i][0];
+                                        $data2 = $sql_array_kategorie[$i][1];
+                                        echo "<option value='$data1' data-child-options='$data_child_options'>$data2</option>";
+                                    }
                                     ?>
                                 </select>
                                 <br>
-                                <select name="gegenstand">
+                                <select name="gegenstand" id="gegenstand" class="dependent-selects__child">
                                     <option value="" selected="selected">Gegenstände</option>
                                     <?php
                                     for($i=0;$i<10;$i++){                                                               // Später Gegenstände aus Datenbank hohlen,
@@ -90,7 +118,7 @@ if (!isset($_SESSION['login'])) {
                             </form>
                         </td>
                     </tr>
-                </tbody>
+                    </tbody>
                 </table>
             </div>
         </div>
@@ -152,5 +180,6 @@ if (!isset($_SESSION['login'])) {
         </div>
     </div>
 </div>
+<script defer src="../dependent-selects.js"></script>
 </body>
 </html>
