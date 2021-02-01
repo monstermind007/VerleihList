@@ -3,7 +3,7 @@ if (isset($_SESSION["login"])) {
     if ("1" == $_SESSION["Lehrer"]) {
         header("Location: Lehrer/dashboard.php");
     } elseif ("1" == $_SESSION["Schueler"]) {
-        header("Loaction:Schueler/dashboard.php");
+        header("Location:Schueler/dashboard.php");
     }
 }
 
@@ -47,7 +47,7 @@ if (isset($_SESSION["login"])) {
             if ("1" == $_SESSION["Lehrer"]) {
                 header("Location:Lehrer/dashboard.php");
             } elseif ("1" == $_SESSION["Schueler"]) {
-                header("Loaction:Schueler/dashboard.php");
+                header("Location:Schueler/dashboard.php");
             }
         } else {
             echo "Falsche Daten";
