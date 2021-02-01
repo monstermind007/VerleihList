@@ -65,7 +65,7 @@ var handle_dependent_selects = function($parent) {
     } else {
         var show_text = $child.getAttribute('data-text-if-parent-empty');
         if(!show_text) {
-            show_text = 'Select ' + $parent.name;
+            show_text = 'Wähle ' + $parent.name;
         }
         for (i=0; i<$child.options.length; i++) {
             var $option = $child.options[$child.selectedIndex];
