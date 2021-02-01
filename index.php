@@ -1,8 +1,8 @@
 <?php session_start();
 if (isset($_SESSION["login"])) {
-    if ("1" == $sql_daten["IstLehrer"]) {
+    if ("1" == $_SESSION["Rechte"]) {
         header("Location:Lehrer/dashboard.php");
-    } elseif ("2" == $sql_daten["IstLehrer"]) {
+    } elseif ("0" == $_SESSION["Rechte"]) {
         header("Loaction:Schüler/dashboard.php");
     }
 }
@@ -21,7 +21,7 @@ if (isset($_SESSION["login"])) {
         $email = $_POST["email"];
         $password = $_POST["password"];
 
-        $dbconnection = mysqli_connect("134.255.220.55:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+        @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
         if (!$dbconnection) {
             error_log("Fehler beim Verbinden der Datenbank");
             die("Verbindungsfehler");
