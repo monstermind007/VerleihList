@@ -4,6 +4,9 @@ if (!$dbconnection) {
     error_log("Fehler beim Verbinden der Datenbank");
     die("Verbindungsfehler");
 }
+if ("1" != $_SESSION["Lehrer"]){
+    header('Location:../index.php');
+}
 ?>
 <!DOCTYPE html>
 <html>

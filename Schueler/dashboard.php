@@ -4,6 +4,9 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
+if ("1" != $_SESSION["Schueler"]){
+    header('Location:../index.php');
+}
 if (isset($_POST["logoff"])) {
     session_destroy();
     header('Location:../index.php');

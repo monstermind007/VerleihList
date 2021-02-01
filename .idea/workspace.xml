@@ -25,11 +25,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Logout Fehler behoben">
+      <change afterPath="$PROJECT_DIR$/Admin/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lehrer/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/Materialliste.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lehrer/addstudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/addstudent.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lehrer/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/printMaterialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/printMaterialliste.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lehrer/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lehrer/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile_password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/Materialliste.php" afterDir="false" />
@@ -138,7 +141,7 @@
       <workItem from="1611911421744" duration="931000" />
       <workItem from="1612171314278" duration="1114000" />
       <workItem from="1612173990580" duration="5554000" />
-      <workItem from="1612186120531" duration="133000" />
+      <workItem from="1612186120531" duration="1120000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -259,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612185832060</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Logout Fehler behoben">
+      <created>1612186320012</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1612186320012</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +301,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/DB" />
+                        <option value="origin/Design" />
                       </list>
                     </value>
                   </entry>
@@ -318,7 +328,8 @@
     <MESSAGE value="Neue DB Connection" />
     <MESSAGE value="Für Kaiaiaiaia zum Debuggen" />
     <MESSAGE value="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN" />
-    <option name="LAST_COMMIT_MESSAGE" value="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN" />
+    <MESSAGE value="Logout Fehler behoben" />
+    <option name="LAST_COMMIT_MESSAGE" value="Logout Fehler behoben" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
