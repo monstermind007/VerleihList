@@ -1,9 +1,9 @@
 <?php session_start();
 if (isset($_SESSION["login"])) {
-    if ("1" == $_SESSION["Rechte"]) {
-        header("Location:Lehrer/dashboard.php");
-    } elseif ("0" == $_SESSION["Rechte"]) {
-        header("Loaction:Schüler/dashboard.php");
+    if ("1" == $_SESSION["Lehrer"]) {
+        header("Location: Lehrer/dashboard.php");
+    } elseif ("1" == $_SESSION["Schueler"]) {
+        header("Loaction:Schueler/dashboard.php");
     }
 }
 
@@ -33,7 +33,9 @@ if (isset($_SESSION["login"])) {
         if ($sql_daten["Password"] == $password) {
             $_SESSION["EMail"] = $sql_daten["EMail"];
             $_SESSION["ID"] = $sql_daten["ID"];
-            $_SESSION["Rechte"] = $sql_daten["IstLehrer"];
+            $_SESSION["Lehrer"] = $sql_daten["IstLehrer"];
+            $_SESSION["Admin"] = $sql_daten["IstAdmin"];
+            $_SESSION["Schueler"] = $sql_daten["IstSchüler"];
             $_SESSION["Name"] = $sql_daten["Name"];
             $_SESSION["Vorname"] = $sql_daten["Vorname"];
             $_SESSION["Telefon"] = $sql_daten["Telefon"];
@@ -42,10 +44,10 @@ if (isset($_SESSION["login"])) {
             $_SESSION["PLZ"] = $sql_daten["PLZ"];
             $_SESSION["Klasse"] = $sql_daten["Klasse"];
             $_SESSION["login"] = true;
-            if ("1" == $sql_daten["IstLehrer"]) {
+            if ("1" == $_SESSION["Lehrer"]) {
                 header("Location:Lehrer/dashboard.php");
-            } elseif ("0" == $sql_daten["IstLehrer"]) {
-                header("Loaction:Schüler/dashboard2.php");
+            } elseif ("1" == $_SESSION["Schueler"]) {
+                header("Loaction:Schueler/dashboard.php");
             }
         } else {
             echo "Falsche Daten";
@@ -70,3 +72,4 @@ if (isset($_SESSION["login"])) {
 </center>
 </body>
 </html>
+

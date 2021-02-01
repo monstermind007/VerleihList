@@ -25,20 +25,19 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Ordnerstruktur angepasst&#10;Ausleihliste 90% fertig">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Neue DB Connection">
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/Materialliste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/addstudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/addstudent.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/daten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/printMaterialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/printMaterialliste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile_password.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schüler/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schüler/Materialliste.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schüler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schüler/anträge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schüler/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schüler/daten.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schüler/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schüler/profile.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schüler/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schüler/profile_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/Materialliste.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/anträge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/neuerAntrag.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/neuerAntrag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schüler/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/printindex.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +63,7 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
   <component name="ProjectId" id="1nbIWEyi66XvvSNJs1xOXv71qYy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -78,7 +78,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="gitlive.settings" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -86,8 +86,11 @@
       <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Lehrer" />
     </key>
   </component>
-  <component name="RunManager" selected="PHP Script.dashboard.php">
+  <component name="RunManager" selected="PHP Script.index.php">
     <configuration name="dashboard.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/Lehrer/dashboard.php">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/index.php">
       <method v="2" />
     </configuration>
     <configuration name="login.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/login.php">
@@ -100,8 +103,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHP Script.login.php" />
+        <item itemvalue="PHP Script.index.php" />
         <item itemvalue="PHP Script.dashboard.php" />
+        <item itemvalue="PHP Script.login.php" />
       </list>
     </recent_temporary>
   </component>
@@ -125,7 +129,7 @@
       <workItem from="1611910189028" duration="1202000" />
       <workItem from="1611911421744" duration="931000" />
       <workItem from="1612171314278" duration="1114000" />
-      <workItem from="1612173990580" duration="850000" />
+      <workItem from="1612173990580" duration="3242000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -218,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612109596465</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Neue DB Connection">
+      <created>1612180984084</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1612180984084</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +285,26 @@
     <MESSAGE value="Login (Session) 100%&#10;Datenausgabe Personen 100%&#10;Bug Fixes 100%&#10;OrdnerStruktur 100%" />
     <MESSAGE value="Ordnerstruktur angepasst" />
     <MESSAGE value="Ordnerstruktur angepasst&#10;Ausleihliste 90% fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ordnerstruktur angepasst&#10;Ausleihliste 90% fertig" />
+    <MESSAGE value="Neue DB Connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Neue DB Connection" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/index.php</url>
+          <line>48</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
