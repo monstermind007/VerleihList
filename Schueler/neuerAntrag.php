@@ -45,6 +45,23 @@ if (!isset($_SESSION['login'])) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
+                function make_data_child_options($rows, $array){
+                    $data_child_options="";
+                    if($rows > 0 && $rows != 1) {
+                        $data_child_options = $array[0][0] . "|#";
+                    } elseif ($rows == 1){
+                        $data_child_options = $array[0][0];
+                    }
+                    if($rows > 2) {
+                        for ($j = 1; $j < $rows - 1; $j++) {
+                            $data_child_options .= $array[$j][0] . "|#";
+                        }
+                    }
+                    if($rows > 1) {
+                        $data_child_options .= $array[$rows-1][0];
+                    }
+                    return $data_child_options;
+                }
                 ?>
                 <br>
                 <table class="table table-bordered print">
@@ -58,12 +75,19 @@ if (!isset($_SESSION['login'])) {
                         <td>
                             <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                                 <select name="Kategorie" id="kategorie" data-child-id="gegenstand" class="dependent-selects__parent">
-                                    <option value="" selected="selected">-Kategorien-</option>
+                                    <option value="" selected="selected">- Kategorien -</option>
                                     <?php
                                     $sql_kategorie = "SELECT ID, Name FROM kategorien";
                                     $sql_data_kategorie = mysqli_query($dbconnection,$sql_kategorie);
                                     $sql_rows_kategorie = mysqli_num_rows($sql_data_kategorie);
                                     $sql_array_kategorie = mysqli_fetch_all($sql_data_kategorie,MYSQLI_BOTH);
+
+                                    $sql_item = "SELECT ID, Bezeichnung FROM gegenstände";
+                                    $sql_data_item = mysqli_query($dbconnection,$sql_item);
+                                    $sql_rows_item = mysqli_num_rows($sql_data_item);
+                                    $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
+                                    $data_child_options = make_data_child_options($sql_rows_item,$sql_array_item);
+                                    echo "<option value='0' data-child-options='$data_child_options'>Alle Kategorien</option>";
 
                                     for($i=0;$i<$sql_rows_kategorie;$i++){
                                         $k = $i+1;                                                                  // Leider ist Mathematik in sql befehlen nicht möglich -.-
@@ -72,20 +96,8 @@ if (!isset($_SESSION['login'])) {
                                         $sql_rows_item = mysqli_num_rows($sql_data_item);
                                         $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
 
-                                        $data_child_options="";
-                                        if($sql_rows_item > 0 && $sql_rows_item != 1) {
-                                            $data_child_options = $sql_array_item[0][0] . "|#";
-                                        } elseif ($sql_rows_item == 1){
-                                            $data_child_options = $sql_array_item[0][0];
-                                        }
-                                        if($sql_rows_item > 2) {
-                                            for ($j = 1; $j < $sql_rows_item - 1; $j++) {
-                                                $data_child_options .= $sql_array_item[$j][0] . "|#";
-                                            }
-                                        }
-                                        if($sql_rows_item > 1) {
-                                            $data_child_options .= $sql_array_item[$sql_rows_item-1][0];
-                                        }
+                                        $data_child_options = make_data_child_options($sql_rows_item,$sql_array_item);
+
                                         $data1 = $sql_array_kategorie[$i][0];
                                         $data2 = $sql_array_kategorie[$i][1];
                                         echo "<option value='$data1' data-child-options='$data_child_options'>$data2</option>";
@@ -93,12 +105,20 @@ if (!isset($_SESSION['login'])) {
                                     ?>
                                 </select>
                                 <br>
-                                <select name="gegenstand" id="gegenstand" class="dependent-selects__child">
-                                    <option value="" selected="selected">Gegenstände</option>
+                                <select name="gegenstand" id="gegenstand" class="dependent-selects__child" required>
+                                    <!--Placeholder Option, muss einfach nur existieren-->
+                                    <option value=""></option>
                                     <?php
-                                    for($i=0;$i<10;$i++){                                                               // Später Gegenstände aus Datenbank hohlen,
-                                        echo "<option value='$i'>$i</option>";                                          // erstmal eine placeholder Schleife.
-                                    }                                                                                   // Linke ich zusammen sobald DB funktioniert
+                                    $sql_item = "SELECT ID, Bezeichnung FROM gegenstände";
+                                    $sql_data_item = mysqli_query($dbconnection,$sql_item);
+                                    $sql_rows_item = mysqli_num_rows($sql_data_item);
+                                    $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
+
+                                    for($l=0;$l<$sql_rows_item;$l++){
+                                        $data1 = $sql_array_item[$l][0];
+                                        $data2 = $sql_array_item[$l][1];
+                                        echo "<option value='$data1'>$data2</option>>";
+                                    }
                                     ?>
                                 </select>
                                 <div class="Inputfield2">
@@ -110,6 +130,29 @@ if (!isset($_SESSION['login'])) {
                         </td>
                         <td>
                             <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                                <select name="verleihung" id="verleihung" required>
+                                    <option value="">- Verleihung -</option>
+                                <?php
+                                $sql_verleihung = "SELECT ID, Gegenstand, Anzahl FROM verleihungen WHERE VerliehenAn='".$_SESSION['ID']."'";
+                                $sql_data_verleihung = mysqli_query($dbconnection,$sql_verleihung);
+                                $sql_rows_verleihung = mysqli_num_rows($sql_data_verleihung);
+                                $sql_array_verleihung = mysqli_fetch_all($sql_data_verleihung,MYSQLI_BOTH);
+
+                                for($m=0;$m<$sql_rows_verleihung;$m++){
+                                    $build_content_name = "";
+
+                                    $sql_item = "SELECT Bezeichnung FROM gegenstände WHERE ID='".$sql_array_verleihung[$m][1]."'";
+                                    $sql_data_item = mysqli_query($dbconnection,$sql_item);
+                                    $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
+
+                                    $build_content_name .= $sql_array_verleihung[$m][2];
+                                    $build_content_name .= "x ";
+                                    $build_content_name .= $sql_array_item[0][0];
+                                    $data = $sql_array_verleihung[$m][0];
+                                    echo "<option value='$data'>$build_content_name</option>";
+                                }
+                                ?>
+                                </select>
                                 <div class="Inputfield2">
                                     <input type="date" name="test" required autocomplete="off">
                                     <label>Neues Abgabedatum</label>
