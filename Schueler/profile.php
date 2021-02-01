@@ -62,7 +62,7 @@ if (isset($_POST["logoff"])) {
                     echo "Ihre Daten wurden geändert!";
                 }
 
-                ?>
+                ?><br><br><br><br>
                 <div class="main__title">
                     <center>
                         <h1>Profil bearbeiten</h1>
@@ -107,7 +107,7 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Alle Anträge</a>
+                <a href="anträge.php">Alle Anträge</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
@@ -120,15 +120,15 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../Lehrer/daten.php">Profildaten</a>
+                <a href="daten.php">Profildaten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../Lehrer/profile.php">Daten ändern</a>
+                <a href="profile.php">Daten ändern</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../Lehrer/profile_password.php">Passwort ändern</a>
+                <a href="profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
