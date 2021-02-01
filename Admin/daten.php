@@ -4,22 +4,20 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Lehrer"]){
+if ("1" != $_SESSION["Admin"]){
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
     session_destroy();
-    header("Location:../index.php");
+    header('Location:../index.php');
 }
 ?>
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../style.css"/>
 </head>
-
 <body id="body">
 <div class="container">
     <nav class="navigation_oben">
@@ -27,7 +25,7 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
-            <a>Schüler</a>
+            <a>User</a>
             <a>Materialliste</a>
             <a class="active_link">Profil</a>
         </div>
@@ -37,6 +35,7 @@ if (isset($_POST["logoff"])) {
                 <i class="notification" aria-hidden="true"></i>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
+            </a>
         </div>
     </nav>
 
@@ -114,28 +113,44 @@ if (isset($_POST["logoff"])) {
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
-            <h2>Schüler</h2>
+            <h2>User</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler Verwalten</a>
+                <a href="students.php">Schüler Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="addstudent.php">Schüler anlegen</a>
             </div>
-            <h2>Materialliste</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Liste</a>
+                <a href="teachers.php">Lehrer Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Materialliste.php">Materialien anlegen</a>
+                <a href="addteacher.php">Lehrer Anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="admins.php">Admins Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addadmin.php">Admin anlegen</a>
+            </div>
+            <h2>Materialliste</h2>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="Materialliste.php">Liste</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Nachrichten</a>
+                <a href="messages.php">Nachrichten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>

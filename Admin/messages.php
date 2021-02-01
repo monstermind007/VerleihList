@@ -4,22 +4,20 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Lehrer"]){
+if ("1" != $_SESSION["Admin"]){
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
     session_destroy();
-    header("Location:../index.php");
+    header('Location:../index.php');
 }
 ?>
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../style.css"/>
 </head>
-
 <body id="body">
 <div class="container">
     <nav class="navigation_oben">
@@ -27,7 +25,7 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
-            <a>Schüler</a>
+            <a>User</a>
             <a>Materialliste</a>
             <a class="active_link">Profil</a>
         </div>
@@ -37,70 +35,20 @@ if (isset($_POST["logoff"])) {
                 <i class="notification" aria-hidden="true"></i>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
+            </a>
         </div>
     </nav>
 
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="Main">
-                <div class="main__title">
-                    <center>
-                        <h1>Profil Daten</h1>
-                    </center>
-                </div>
-                <?php
-                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                if (!$dbconnection) {
-                    error_log("Fehler beim Verbinden der Datenbank");
-                    die("Verbindungsfehler");
-                }
-
-                $sql_data = "SELECT * FROM personen WHERE ID = '" . $_SESSION['ID'] . "' ";
-                $sql_data_res = mysqli_query($dbconnection, $sql_data);
-                $sql_array = mysqli_fetch_array($sql_data_res);
-                ?>
-                <table class="table table-bordered print">
-                    <thead>
-                    <tr>
-                        <td>Nutzer-ID</td>
-                        <td><?php echo $sql_array["ID"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Vorname</td>
-                        <td><?php echo $sql_array["Vorname"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Nachname</td>
-                        <td><?php echo $sql_array["Name"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Klasse</td>
-                        <td><?php echo $sql_array["Klasse"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Email</td>
-                        <td><?php echo $sql_array["EMail"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Telefonnr.</td>
-                        <td><?php echo $sql_array["Telefon"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Straße</td>
-                        <td><?php echo $sql_array["Straße"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>PLT</td>
-                        <td><?php echo $sql_array["PLZ"]; ?></td>
-                    </tr>
-                    <tr>
-                        <td>Ort</td>
-                        <td><?php echo $sql_array["Ort"];?></td>
-                    </tr>
-                    </thead>
-                </table>
+            <div class="main__title">
+                <h1>Hallo <?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?> </h1>
             </div>
+            <div class="Hauptteil">
+                ...
+            </div>
+        </div>
     </main>
     <!-- Seitliche Navigation Links -->
     <div id="sidebar">
@@ -114,28 +62,44 @@ if (isset($_POST["logoff"])) {
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
-            <h2>Schüler</h2>
+            <h2>User</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler Verwalten</a>
+                <a href="students.php">Schüler Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="addstudent.php">Schüler anlegen</a>
             </div>
-            <h2>Materialliste</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Liste</a>
+                <a href="teachers.php">Lehrer Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Materialliste.php">Materialien anlegen</a>
+                <a href="addteacher.php">Lehrer Anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="admins.php">Admins Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addadmin.php">Admin anlegen</a>
+            </div>
+            <h2>Materialliste</h2>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="Materialliste.php">Liste</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Nachrichten</a>
+                <a href="messages.php">Nachrichten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>

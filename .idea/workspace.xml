@@ -25,9 +25,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Admin Interface 50%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lehrer/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/Materialliste.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/anträge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile_password.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +132,8 @@
       <workItem from="1611910189028" duration="1202000" />
       <workItem from="1611911421744" duration="931000" />
       <workItem from="1612171314278" duration="1114000" />
-      <workItem from="1612173990580" duration="5285000" />
+      <workItem from="1612173990580" duration="5554000" />
+      <workItem from="1612186120531" duration="5302000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -241,7 +247,35 @@
       <option name="project" value="LOCAL" />
       <updated>1612183869256</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN">
+      <created>1612185832060</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1612185832060</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Logout Fehler behoben">
+      <created>1612186320012</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1612186320012</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Rechteverteilung">
+      <created>1612187469662</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1612187469662</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Admin Interface 50%">
+      <created>1612190117600</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1612190117600</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +307,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/DB" />
+                        <option value="origin/Design" />
                       </list>
                     </value>
                   </entry>
@@ -300,14 +334,17 @@
     <MESSAGE value="Neue DB Connection" />
     <MESSAGE value="Für Kaiaiaiaia zum Debuggen" />
     <MESSAGE value="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN" />
-    <option name="LAST_COMMIT_MESSAGE" value="ICH BIN DUMM LOCATION FALSCH GESCHRIEBEN" />
+    <MESSAGE value="Logout Fehler behoben" />
+    <MESSAGE value="Rechteverteilung" />
+    <MESSAGE value="Admin Interface 50%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Interface 50%" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/index.php</url>
-          <line>48</line>
+          <line>51</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>

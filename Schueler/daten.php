@@ -4,6 +4,13 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
+if ("1" != $_SESSION["Schueler"]){
+    header('Location:../index.php');
+}
+if (isset($_POST["logoff"])) {
+    session_destroy();
+    header('Location:../index.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="de">
@@ -35,11 +42,6 @@ if (!isset($_SESSION['login'])) {
     <main>
         <div class="main_container">
             <div class="Main">
-                <div class="main__title">
-                    <center>
-                        <h1>Profil Daten</h1>
-                    </center>
-                </div>
                 <?php
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if (!$dbconnection) {
@@ -50,7 +52,12 @@ if (!isset($_SESSION['login'])) {
                 $sql_data = "SELECT * FROM personen WHERE ID = '" . $_SESSION['ID'] . "' ";
                 $sql_data_res = mysqli_query($dbconnection, $sql_data);
                 $sql_array = mysqli_fetch_array($sql_data_res);
-                ?>
+                ?><br><br><br><br>
+                <div class="main__title">
+                    <center>
+                        <h1>Profil Daten</h1>
+                    </center>
+                </div>
                 <table class="table table-bordered print">
                     <thead>
                     <tr>
@@ -112,7 +119,7 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Alle Anträge</a>
+                <a href="anträge.php">Alle Anträge</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
@@ -125,27 +132,21 @@ if (!isset($_SESSION['login'])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../Lehrer/daten.php">Profildaten</a>
+                <a href="daten.php">Profildaten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../Lehrer/profile.php">Daten ändern</a>
+                <a href="profile.php">Daten ändern</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="../Lehrer/profile_password.php">Passwort ändern</a>
+                <a href="profile_password.php">Passwort ändern</a>
             </div>
             <div class="sidebar_logout">
                 <i class="rechter_text"></i>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <input type="submit" value="Abmelden" name="logoff" id="logoff">
                 </form>
-                <?php
-                if (isset($_POST["logoff"])) {
-                    session_destroy();
-                    header('Location:../index.php');
-                }
-                ?>
             </div>
         </div>
     </div>
