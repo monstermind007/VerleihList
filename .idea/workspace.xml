@@ -25,10 +25,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Bugfix Hinzufügen von Profilen">
-      <change afterPath="$PROJECT_DIR$/login.css" afterDir="false" />
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="CSS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -137,7 +135,7 @@
       <workItem from="1612252454215" duration="733000" />
       <workItem from="1612264155103" duration="6433000" />
       <workItem from="1612277619010" duration="6222000" />
-      <workItem from="1612288018517" duration="1576000" />
+      <workItem from="1612288018517" duration="1800000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -321,7 +319,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612288507076</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="CSS">
+      <created>1612289819025</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1612289819025</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +392,8 @@
     <MESSAGE value="Navigation 100%" />
     <MESSAGE value="Anträge 100% Bugfix" />
     <MESSAGE value="Bugfix Hinzufügen von Profilen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix Hinzufügen von Profilen" />
+    <MESSAGE value="CSS" />
+    <option name="LAST_COMMIT_MESSAGE" value="CSS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
