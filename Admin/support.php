@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Schueler"]){
+if ("1" != $_SESSION["Admin"]){
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -24,9 +24,10 @@ if (isset($_POST["logoff"])) {
         <div class="nav_icon" onclick="toggleSidebar()">
         </div>
         <div class="navigation_oben__links">
-            <a>Dashboard</a>
+            <a class="active_link">Dashboard</a>
+            <a>User</a>
             <a>Materialliste</a>
-            <a class="active_link">Profil</a>
+            <a>Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
@@ -41,52 +42,37 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="Main">
+            <div class="main__title">
+                <h1>Hallo <?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?> </h1>
+            </div>
+            <div class="Hauptteil">
                 <?php
-                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");    //Die momentane verbindung
+                //@$dbconnection = mysqli_connect("localhost", "root", "", "materialverleihDB"); //Zum testen weil der Server weg ist
                 if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
-
-                if (isset($_POST["ändern"])) {
-                    $id = $_SESSION["ID"];
-                    $email = $_POST["email"];
-                    $telefon = $_POST["telefon"];
-                    $straße = $_POST["straße"];
-                    $ort = $_POST["ort"];
-                    $plz = $_POST["plz"];
-
-                    $sql_ändern = "UPDATE personen SET EMail ='" . $email . "', Telefon='" . $telefon . "',Straße = '" . $straße . "', Ort= '" . $ort . "', PLZ = '" . $plz . "' WHERE id = '" . $_SESSION['ID'] . "' ";
-                    $db_ret_ändern = mysqli_query($dbconnection, $sql_ändern);
-                    echo "Ihre Daten wurden geändert!";
-                }
-
-                ?><br><br><br><br>
-                <div class="main__title">
-                    <center>
-                        <h1>Profil bearbeiten</h1>
-                    </center>
-                </div>
+                ?>
+                <br>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                    <div class="Inputfield2">
-                        <input type="email" name="email" placeholder="E-Mail">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="telefon" placeholder="Telefonnr.">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="straße" placeholder="Straße & Hausnummer">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="ort" placeholder="Ort">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="plz" placeholder="PLZ">
-                    </div>
-                    <input type="submit" value="Ändern" name="ändern" id="submit2">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Support Ticket von</th>
+                        <th>Betreff</th>
+                        <th>Inhalt</th>
+                        <th>Abschließen</th>
+                    </tr>
+                    <?php
+                    $sql_support = "SELECT ID,Von,Betreff,Inhalt FROM support WHERE Bearbeitet=0";
+                    $sql_data_support = mysqli_query($dbconnection,$sql_support);
+                    $sql_array_support = mysqli_fetch_all($sql_data_support);
+                    $sql_rows_support = mysqli_num_rows($sql_data_support);
+                    ?>
+                </table>
                 </form>
             </div>
+        </div>
     </main>
     <!-- Seitliche Navigation Links -->
     <div id="sidebar">
@@ -96,9 +82,34 @@ if (isset($_POST["logoff"])) {
         </div>
 
         <div class="sidebar_menu">
-            <div class="sidebar_link active_menu_link">
+            <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
+            </div>
+            <h2>User</h2>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="students.php">Schüler Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addstudent.php">Schüler anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="teachers.php">Lehrer Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addteacher.php">Lehrer Anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="admins.php">Admins Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addadmin.php">Admin anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -107,11 +118,7 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="anträge.php">Alle Anträge</a>
-            </div>
-            <div class="sidebar_link">
-                <i class="rechter_text"></i>
-                <a href="neuerAntrag.php">Antrag stellen</a>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
@@ -139,5 +146,6 @@ if (isset($_POST["logoff"])) {
         </div>
     </div>
 </div>
+<script>history.pushState({}, "", "")</script>
 </body>
 </html>
