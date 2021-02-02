@@ -70,13 +70,13 @@ if (isset($_POST["logoff"])) {
 
                     <tbody>
                     <?php
-                    $sql_data = "SELECT * FROM verleihungen WHERE ID = '" . $_SESSION['ID'] . "' ";
+                    $sql_data = "SELECT * FROM verleihungen WHERE verleihungen.VerliehenAn = '" . $_SESSION['ID'] . "' ";
                     $sql_data_res = mysqli_query($dbconnection, $sql_data);
                     $sql_array = mysqli_fetch_array($sql_data_res);
-                    $sql_data2 = "SELECT * FROM verleihungen JOIN gegenstände ON verleihungen.ID = gegenstände.ID";
+                    $sql_data2 = "SELECT * FROM verleihungen JOIN gegenstände ON verleihungen.Gegenstand = gegenstände.ID";
                     $sql_data_res2 = mysqli_query($dbconnection, $sql_data2);
                     $sql_array2 = mysqli_fetch_array($sql_data_res2);
-                    $sql_data3 = "SELECT * FROM verleihungen JOIN personen ON verleihungen.ID = personen.ID";
+                    $sql_data3 = "SELECT * FROM verleihungen JOIN personen ON verleihungen.VerliehenVon = personen.ID";
                     $sql_data_res3 = mysqli_query($dbconnection, $sql_data3);
                     $sql_array3 = mysqli_fetch_array($sql_data_res3);
                     ?>
