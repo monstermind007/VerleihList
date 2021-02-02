@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Schueler"]){
+if ("1" != $_SESSION["Schueler"]) {
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -41,51 +41,50 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="Main">
+            <div class="Hauptteil">
                 <?php
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
-
-                if (isset($_POST["ändern"])) {
-                    $id = $_SESSION["ID"];
-                    $email = $_POST["email"];
-                    $telefon = $_POST["telefon"];
-                    $straße = $_POST["straße"];
-                    $ort = $_POST["ort"];
-                    $plz = $_POST["plz"];
-
-                    $sql_ändern = "UPDATE personen SET EMail ='" . $email . "', Telefon='" . $telefon . "',Straße = '" . $straße . "', Ort= '" . $ort . "', PLZ = '" . $plz . "' WHERE id = '" . $_SESSION['ID'] . "' ";
-                    $db_ret_ändern = mysqli_query($dbconnection, $sql_ändern);
-                    echo "Ihre Daten wurden geändert!";
-                }
-
-                ?><br><br><br><br>
+                ?> <br><br>
+                <br><br>
                 <div class="main__title">
                     <center>
-                        <h1>Profil bearbeiten</h1>
+                        <h1>Meine Anträge</h1>
                     </center>
                 </div>
-                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                    <div class="Inputfield2">
-                        <input type="email" name="email" placeholder="E-Mail">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="telefon" placeholder="Telefonnr.">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="straße" placeholder="Straße & Hausnummer">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="ort" placeholder="Ort">
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="plz" placeholder="PLZ">
-                    </div>
-                    <input type="submit" value="Ändern" name="ändern" id="submit2">
-                </form>
+                <br><br>
+                <table class="table table-bordered print">
+                    <thead>
+                    <tr>
+                        <th>Gegenstand</th>
+                        <th>Verliehen Von</th>
+                        <th>Anzahl</th>
+                        <th>Ausgeliehen am</th>
+                        <th>Rückgabe ist</th>
+                        <th>Rückgabe soll</th>
+                        <th>Zurückgegeben</th>
+                    </tr>
+
+                    <tbody>
+                    <?php
+                    $sql_data = "SELECT * FROM verleihungen WHERE ID = '" . $_SESSION['ID'] . "' ";
+                    $sql_data_res = mysqli_query($dbconnection, $sql_data);
+                    $sql_array = mysqli_fetch_array($sql_data_res);
+                    ?>
+                    <tr>
+                        <td><?php echo $sql_array["Gegenstand"]; ?></td>
+                        <td><?php echo $sql_array["VerliehenVon"]; ?></td>
+                        <td><?php echo $sql_array["Anzahl"]; ?></td>
+                        <td><?php echo $sql_array["Ausleihdatum"]; ?></td>
+                        <td><?php echo $sql_array["RückgabeIst"]; ?></td>
+                        <td><?php echo $sql_array["Rückgabedatum"]; ?></td>
+                        <td><?php echo $sql_array["Rückgegeben"]; ?></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
     </main>
     <!-- Seitliche Navigation Links -->

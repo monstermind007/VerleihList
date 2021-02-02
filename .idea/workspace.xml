@@ -25,12 +25,33 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Admin Interface 50%">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Admin Interface 60%">
+      <change afterPath="$PROJECT_DIR$/Schueler/support.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2021_11_21_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2021_11_21__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2021_11_45_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2021_11_45__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2021_11_48_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_26_01_2021_11_48__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_12_41__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_12_41__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_14_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_14_09__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2021_18_47__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2021_18_47__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_26_01_2021_11_21_[Default_Changelist]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_26_01_2021_11_21__Default_Changelist_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_03__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_05__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/Materialliste.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/addstudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/addstudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile_password.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/Materialliste.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/anträge.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/neuerAntrag.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/neuerAntrag.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Schueler/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/profile_password.php" afterDir="false" />
     </list>
@@ -133,7 +154,12 @@
       <workItem from="1611911421744" duration="931000" />
       <workItem from="1612171314278" duration="1114000" />
       <workItem from="1612173990580" duration="5554000" />
-      <workItem from="1612186120531" duration="5302000" />
+      <workItem from="1612186120531" duration="5597000" />
+      <workItem from="1612191803197" duration="48000" />
+      <workItem from="1612195799698" duration="82000" />
+      <workItem from="1612204716350" duration="61000" />
+      <workItem from="1612252454215" duration="733000" />
+      <workItem from="1612264155103" duration="1722000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -275,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612190117600</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Admin Interface 60%">
+      <created>1612191715683</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1612191715683</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +370,8 @@
     <MESSAGE value="Logout Fehler behoben" />
     <MESSAGE value="Rechteverteilung" />
     <MESSAGE value="Admin Interface 50%" />
-    <option name="LAST_COMMIT_MESSAGE" value="Admin Interface 50%" />
+    <MESSAGE value="Admin Interface 60%" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Interface 60%" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -109,7 +109,7 @@ if (isset($_POST["logoff"])) {
             <h2>Schüler</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Schüler Verwalten</a>
+                <a href="addstudent.php">Schüler Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
@@ -118,16 +118,16 @@ if (isset($_POST["logoff"])) {
             <h2>Materialliste</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Liste</a>
+                <a href="Materialliste.php">Liste</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="Materialliste.php">Materialien anlegen</a>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Nachrichten</a>
+                <a href="messages.php">Nachrichten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>

@@ -115,12 +115,12 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Antrag stellen</a>
+                <a href="neuerAntrag.php">Antrag stellen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="#">Nachrichten</a>
+                <a href="messages.php">Nachrichten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
