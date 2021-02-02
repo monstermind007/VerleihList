@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Schueler"]) {
+if ("1" != $_SESSION["Schueler"]){
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -41,50 +41,43 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="Hauptteil">
+            <div class="Main">
                 <?php
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
-                ?> <br><br>
-                <br><br>
+
+                if (isset($_POST["ändern"])){
+                    $id = $_SESSION["ID"];
+                    $betreff = $_POST["betreff"];
+                    $inhalt = $_POST["inhalt"];
+
+                    $support = "INSERT INTO support (Von, Betreff, Inhalt) VALUES ('$id', '$betreff', '$inhalt')";
+                if (mysqli_query($dbconnection, $support)){
+                    print("<center>Support Ticket wurde übermittelt.</center>");
+                }
+                else {
+                    print("<center>Fehler</center>");
+                }
+                }
+                ?><br><br><br><br>
                 <div class="main__title">
                     <center>
-                        <h1>Meine Anträge</h1>
-                    </center>
+                        <h1>Support Ticket</h1>
+                    </center><br>
                 </div>
-                <br><br>
-                <table class="table table-bordered print">
-                    <thead>
-                    <tr>
-                        <th>Gegenstand</th>
-                        <th>Verliehen Von</th>
-                        <th>Anzahl</th>
-                        <th>Ausgeliehen am</th>
-                        <th>Rückgabe ist</th>
-                        <th>Rückgabe soll</th>
-                        <th>Zurückgegeben</th>
-                    </tr>
-
-                    <tbody>
-                    <?php
-                    $sql_data = "SELECT * FROM verleihungen WHERE ID = '" . $_SESSION['ID'] . "' ";
-                    $sql_data_res = mysqli_query($dbconnection, $sql_data);
-                    $sql_array = mysqli_fetch_array($sql_data_res);
-                    ?>
-                    <tr>
-                        <td><?php echo $sql_array["Gegenstand"]; ?></td>
-                        <td><?php echo $sql_array["VerliehenVon"]; ?></td>
-                        <td><?php echo $sql_array["Anzahl"]; ?></td>
-                        <td><?php echo $sql_array["Ausleihdatum"]; ?></td>
-                        <td><?php echo $sql_array["RückgabeIst"]; ?></td>
-                        <td><?php echo $sql_array["Rückgabedatum"]; ?></td>
-                        <td><?php echo $sql_array["Rückgegeben"]; ?></td>
-                    </tr>
-                    </tbody>
-                </table>
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                    <div class="Inputfield2">
+                        <input type="digits" name="betreff" required autocomplete="off">
+                        <label>Betreff</label>
+                    </div>
+                    <textarea maxlength="5000" name="inhalt" placeholder="Problem beschreiben:"></textarea>
+                    <br><br>
+                    <input type="submit" value="Ändern" name="ändern" id="submit2">
+                </form>
+            </div>
             </div>
     </main>
     <!-- Seitliche Navigation Links -->
