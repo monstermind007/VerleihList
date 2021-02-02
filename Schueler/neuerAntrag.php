@@ -30,7 +30,6 @@ if (!isset($_SESSION['login'])) {
             </a>
         </div>
     </nav>
-
     <!--Hauptteil -->
     <main>
         <div class="main_container">
@@ -45,7 +44,8 @@ if (!isset($_SESSION['login'])) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
-                function make_data_child_options($rows, $array){
+                function make_data_child_options($rows, $array): string
+                {
                     $data_child_options="";
                     if($rows > 0 && $rows != 1) {
                         $data_child_options = $array[0][0] . "|#";
@@ -62,13 +62,34 @@ if (!isset($_SESSION['login'])) {
                     }
                     return $data_child_options;
                 }
+                $von = $_SESSION['ID'];
+                $sql_push = "";
+                $feedback = "";
+                if(isset($_POST['antragNeu'])){
+                    $gegenstand = $_POST['gegenstand'];
+                    $anzahl = $_POST['anzahl'];
+                    $sql_push = "INSERT INTO anträge (Von,Gegenstand,Anzahl) VALUES ($von,$gegenstand,$anzahl)";
+                }
+                if (isset($_POST['antragAbgabe'])){
+                    $verleihung = $_POST['verleihung'];
+                    $datumNeu = $_POST['abgabedatum'];
+                    $sql_push = "INSERT INTO anträge (Von,Verleihung,DatumNeu) VALUES ($von,$verleihung,'".$datumNeu."')";
+                }
+                if((isset($_POST['antragNeu']) || isset($_POST['antragAbgabe'])) && $sql_push !== ""){
+                    if(mysqli_query($dbconnection,$sql_push)){
+                        $feedback = "Antrag wurde erfolgreich eingereicht.<br>Bitte warten Sie, bis ein Lehrer ihn bearbeitet.";
+                    } else {
+                        //$feedback = mysqli_error($dbconnection);                                                      Debug
+                        $feedback = "Es gab einen Fehler beim Einreichen ihres Antrags.<br>Bitte überprüfen Sie ihre Daten und versuchen es erneut.<br>Sollte es weitere Probleme geben kontaktieren Sie bitte einen Admin.";
+                    }
+                }
                 ?>
                 <br>
                 <table class="table table-bordered print">
                     <thead>
                     <tr>
                         <th>Neuer Ausleihantrag</th>
-                        <th>Antrag auf frühere Abgabe</th>
+                        <th>Antrag auf änderung des Abgabedatums</th>
                     </tr>
                     <tbody>
                     <tr>
@@ -154,12 +175,15 @@ if (!isset($_SESSION['login'])) {
                                 ?>
                                 </select>
                                 <div class="Inputfield2">
-                                    <input type="date" name="test" required autocomplete="off">
+                                    <input type="date" name="abgabedatum" required autocomplete="off">
                                     <label>Neues Abgabedatum</label>
                                 </div>
                                 <input type="submit" value="Antrag Stellen" name="antragAbgabe" id="submit2">
                             </form>
                         </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><?php echo $feedback; ?></td>
                     </tr>
                     </tbody>
                 </table>
@@ -172,7 +196,6 @@ if (!isset($_SESSION['login'])) {
             <!-- Hier könnte man noch ein Profilbild einstllen-->
             <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
-
         <div class="sidebar_menu">
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
@@ -224,5 +247,6 @@ if (!isset($_SESSION['login'])) {
     </div>
 </div>
 <script defer src="../dependent-selects.js"></script>
+<script>history.pushState({}, "", "")</script>
 </body>
 </html>
