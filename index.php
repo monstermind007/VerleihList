@@ -15,7 +15,7 @@ if (isset($_SESSION["login"])) {
 <html>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
 <center>
