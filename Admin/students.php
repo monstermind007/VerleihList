@@ -17,48 +17,6 @@ if (isset($_POST["logoff"])) {
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../style.css"/>
-    <style>
-        .accordion {
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-        }
-
-        .active, .accordion:hover {
-            background-color: #ccc;
-        }
-
-        .accordion:after {
-            content: '\002B';
-            color: #777;
-            font-weight: bold;
-            float: right;
-            margin-left: 5px;
-        }
-
-        .active:after {
-            content: "\2212";
-        }
-
-        .panel {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-        }
-
-        p {
-            color: black;
-        }
-    </style>
 </head>
 <body id="body">
 <div class="container">
@@ -84,7 +42,7 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="Main">
+            <div class="MainPanel">
                 <div class="main__title">
                     <center>
                         <h1>Schüler Verwalten</h1>
@@ -97,52 +55,67 @@ if (isset($_POST["logoff"])) {
                     die("Verbindungsfehler");
                 }
 
-                $sql_data = "SELECT * FROM `personen` WHERE `Vorname` = 'Leon'";
+                $sql_data = "SELECT * FROM personen WHERE ID = 2";
                 $sql_data_res = mysqli_query($dbconnection, $sql_data);
                 $sql_array = mysqli_fetch_array($sql_data_res);
                 ?>
                 <button class="accordion">
-                    <?php
-                    echo "<table>";
-                    while($row = mysqli_fetch_array($sql_data_res)) {
-                        echo "<tr>";
-                        echo "<td>" . $row['Vorname'] . "</td>";
-                        echo "<td>" . $row['Name'] . "</td>";
-                        echo "<td>" . $row['Klasse'] . "</td>";
-                        echo "<td>" . $row['Straße'] . "</td>";
-                        echo "<td>" . $row['PLZ'] . "</td>";
-                        echo "<td>" . $row['Ort'] . "</td>";
-                        echo "<td>" . $row['EMail'] . "</td>";
-                        echo "</tr>";
-                        }
-                        echo "</table>";
-                        ?>
+                    <table class="tablePanel table-bordered print">
+                        <tbody>
+                        <tr>
+                            <td><?php echo $sql_array["Vorname"]; ?></td>
+                            <td><?php echo $sql_array["Name"]; ?></td>
+                            <td><?php echo $sql_array["Klasse"]; ?></td>
+                            <td><?php echo $sql_array["EMail"]; ?></td>
+                            <td><?php echo $sql_array["Telefon"]; ?></td>
+                            <td><?php echo $sql_array["Straße"]; ?></td>
+                            <td><?php echo $sql_array["Ort"]; ?></td>
+                            <td><?php echo $sql_array["PLZ"]; ?></td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </button>
                 <div class="panel">
-                    <p>
-                        <?php
-                        @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                        if (!$dbconnection) {
-                            error_log("Fehler beim Verbinden der Datenbank");
-                            die("Verbindungsfehler");
-                        }
+                <table class="table table-bordered print">
+                    <thead>
+                    <tr>
+                        <th>Gegenstand</th>
+                        <th>Verliehen Von</th>
+                        <th>Anzahl</th>
+                        <th>Ausgeliehen am</th>
+                        <th>Rückgabe ist</th>
+                        <th>Rückgabe soll</th>
+                        <th>Zurückgegeben</th>
+                    </tr>
 
-                        $sql_data = "SELECT * FROM `anträge` WHERE `Von` = 6";
-                        $sql_data_res = mysqli_query($dbconnection, $sql_data);
-                        $sql_array = mysqli_fetch_array($sql_data_res);
-
-                        echo "<table>";
-                        while($row = mysqli_fetch_array($sql_data_res)) {
-                            echo "<tr>";
-                            echo "<td>" . $row['Gegenstand'] . "</td>";
-                            echo "<td>" . $row['Anzahl'] . "</td>";
-                            echo "<td>" . $row['DatumNeu'] . "</td>";
-                            echo "</tr>";
-                        }
-                        echo "</table>";
-
-                        ?>
-                    </p>
+                    <tbody>
+                    <?php
+                    $sql_data = "SELECT * FROM verleihungen WHERE ID = 2";
+                    $sql_data_res = mysqli_query($dbconnection, $sql_data);
+                    $sql_array = mysqli_fetch_array($sql_data_res);
+                    $sql_data2 = "SELECT * FROM verleihungen JOIN gegenstände ON verleihungen.ID = gegenstände.ID";
+                    $sql_data_res2 = mysqli_query($dbconnection, $sql_data2);
+                    $sql_array2 = mysqli_fetch_array($sql_data_res2);
+                    $sql_data3 = "SELECT * FROM verleihungen JOIN personen ON verleihungen.ID = personen.ID";
+                    $sql_data_res3 = mysqli_query($dbconnection, $sql_data3);
+                    $sql_array3 = mysqli_fetch_array($sql_data_res3);
+                    ?>
+                        <tr>
+                            <td><?php echo $sql_array2["Bezeichnung"]; ?></td>
+                            <td><?php echo $sql_array3["Name"]; ?></td>
+                            <td><?php echo $sql_array["Anzahl"]; ?></td>
+                            <td><?php echo $sql_array["Ausleihdatum"]; ?></td>
+                            <td><?php echo $sql_array["RückgabeIst"]; ?></td>
+                            <td><?php echo $sql_array["Rückgabedatum"]; ?></td>
+                            <td><?php if("1" == $sql_array["Rückgegeben"]){
+                                    echo "Ja";
+                                }
+                                elseif ("0" == $sql_array["Rückgegeben"]) {
+                                    echo "Nein";
+                                }; ?></td>
+                        </tr>
+                        </tbody>
+                </table>
                 </div>
                 <script>
                     var acc = document.getElementsByClassName("accordion");
@@ -151,7 +124,7 @@ if (isset($_POST["logoff"])) {
                     for (i = 0; i < acc.length; i++) {
                         acc[i].addEventListener("click", function() {
                             this.classList.toggle("active");
-                            var panel = this.nextElementSibling;
+                            const panel = this.nextElementSibling;
                             if (panel.style.maxHeight) {
                                 panel.style.maxHeight = null;
                             } else {

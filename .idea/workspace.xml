@@ -25,10 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Navigation 100%">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+students.php 15%">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/anträge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/neuerAntrag.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/neuerAntrag.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/students.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/students.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +77,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
