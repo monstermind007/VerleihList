@@ -54,7 +54,9 @@ if (isset($_POST["logoff"])) {
                 $ort = $_POST["ort"];
                 $email = $_POST["email"];
                 $passwort = $_POST["passwort"];
-                $Rechte = "1";
+                $istadmin = "0";
+                $istschueler = "1";
+                $istlehrer = "0";
 
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if(!$dbconnection)
@@ -63,7 +65,9 @@ if (isset($_POST["logoff"])) {
                     die("Verbindungsfehler");
                 }
 
-                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password, IstSchüler) VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort', '$Rechte')";
+                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password, IstAdmin, IstSchüler, IstLehrer)
+                VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort', '$istadmin', $istschueler, $istlehrer)";
+
                 if (mysqli_query($dbconnection, $eintrag)){
                     print("Erfolgreich eingetragen");
                 }
@@ -194,3 +198,4 @@ if (isset($_POST["logoff"])) {
 </div>
 </body>
 </html>
+
