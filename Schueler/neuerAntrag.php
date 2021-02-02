@@ -40,9 +40,6 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <div class="main__title">
-                <h1>Hallo <?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?> </h1>
-            </div>
             <div class="Hauptteil">
                 <?php
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");    //Die momentane verbindung
@@ -109,7 +106,10 @@ if (isset($_POST["logoff"])) {
                     }
                 }
                 ?>
-                <br>
+                <br><br><br><br>
+                <div class="main__title">
+                    <h1><center>Antrag stellen</center></h1><br><br>
+                </div>
                 <table class="table table-bordered print">
                     <thead>
                     <tr>
@@ -166,7 +166,7 @@ if (isset($_POST["logoff"])) {
                                         echo "<option value='$data1'>$data2</option>>";
                                     }
                                     ?>
-                                </select>
+                                </select><br><br>
                                 <div class="Inputfield2">
                                     <input type="number" name="anzahl" required autocomplete="off">
                                     <label>Anzahl</label>
@@ -202,8 +202,8 @@ if (isset($_POST["logoff"])) {
                                 ?>
                                 </select>
                                 <div class="Inputfield2">
+                                    <p>Neues Abgabedatum</p>
                                     <input type="date" name="abgabedatum" required autocomplete="off">
-                                    <label>Neues Abgabedatum</label>
                                 </div>
                                 <input type="submit" value="Antrag Stellen" name="antragAbgabe" id="submit2">
                             </form>

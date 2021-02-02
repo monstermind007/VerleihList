@@ -73,15 +73,26 @@ if (isset($_POST["logoff"])) {
                     $sql_data = "SELECT * FROM verleihungen WHERE ID = '" . $_SESSION['ID'] . "' ";
                     $sql_data_res = mysqli_query($dbconnection, $sql_data);
                     $sql_array = mysqli_fetch_array($sql_data_res);
+                    $sql_data2 = "SELECT * FROM verleihungen JOIN gegenstände ON verleihungen.ID = gegenstände.ID";
+                    $sql_data_res2 = mysqli_query($dbconnection, $sql_data2);
+                    $sql_array2 = mysqli_fetch_array($sql_data_res2);
+                    $sql_data3 = "SELECT * FROM verleihungen JOIN personen ON verleihungen.ID = personen.ID";
+                    $sql_data_res3 = mysqli_query($dbconnection, $sql_data3);
+                    $sql_array3 = mysqli_fetch_array($sql_data_res3);
                     ?>
                     <tr>
-                        <td><?php echo $sql_array["Gegenstand"]; ?></td>
-                        <td><?php echo $sql_array["VerliehenVon"]; ?></td>
+                        <td><?php echo $sql_array2["Bezeichnung"]; ?></td>
+                        <td><?php echo $sql_array3["Name"]; ?></td>
                         <td><?php echo $sql_array["Anzahl"]; ?></td>
                         <td><?php echo $sql_array["Ausleihdatum"]; ?></td>
                         <td><?php echo $sql_array["RückgabeIst"]; ?></td>
                         <td><?php echo $sql_array["Rückgabedatum"]; ?></td>
-                        <td><?php echo $sql_array["Rückgegeben"]; ?></td>
+                        <td><?php if("1" == $sql_array["Rückgegeben"]){
+                            echo "Ja";
+                            }
+                            elseif ("0" == $sql_array["Rückgegeben"]) {
+                                echo "Nein";
+                            }; ?></td>
                     </tr>
                     </tbody>
                 </table>
