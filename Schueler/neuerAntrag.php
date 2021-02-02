@@ -68,12 +68,30 @@ if (!isset($_SESSION['login'])) {
                 if(isset($_POST['antragNeu'])){
                     $gegenstand = $_POST['gegenstand'];
                     $anzahl = $_POST['anzahl'];
-                    $sql_push = "INSERT INTO anträge (Von,Gegenstand,Anzahl) VALUES ($von,$gegenstand,$anzahl)";
+                    $sql_item = "SELECT AnzahlGesamt,AnzahlMomentan FROM gegenstände WHERE ID='".$gegenstand."'";
+                    $sql_data_item = mysqli_query($dbconnection,$sql_item);
+                    $sql_array_item = mysqli_fetch_array($sql_data_item);
+                    if($sql_array_item[0] < $anzahl){
+                        $feedback = "Es gibt nicht genug von dem Gegenstand, welchen Sie ausleihen möchten.<br>Bitte wenden Sie sich an einen Lehrer wenn Sie mehr bestellen möchten.";
+                        $sql_push = "";
+                    } elseif ($sql_array_item[1] < $anzahl){
+                        $feedback = "Momentan sind nicht genug Gegenstände dieser Art zur Verfügung.<br>Bitte warten Sie bis wieder genug zur verfügung stehen.";
+                        $sql_push = "";
+                    } else {
+                        $sql_push = "INSERT INTO anträge (Von,Gegenstand,Anzahl) VALUES ($von,$gegenstand,$anzahl)";
+                    }
                 }
                 if (isset($_POST['antragAbgabe'])){
                     $verleihung = $_POST['verleihung'];
                     $datumNeu = $_POST['abgabedatum'];
-                    $sql_push = "INSERT INTO anträge (Von,Verleihung,DatumNeu) VALUES ($von,$verleihung,'".$datumNeu."')";
+                    $dateTimeNeu = DateTime::createFromFormat('Y-m-d',$datumNeu);
+                    $heute = new DateTime("midnight");
+                    if($dateTimeNeu<$heute){
+                        $feedback = "Ihr neues Abgabedatum ist in der Vergangenheit.<br>Bitte wählen Sie ein valides Datum";
+                        $sql_push = "";
+                    } else {
+                        $sql_push = "INSERT INTO anträge (Von,Verleihung,DatumNeu) VALUES ($von,$verleihung,'" . $datumNeu . "')";
+                    }
                 }
                 if((isset($_POST['antragNeu']) || isset($_POST['antragAbgabe'])) && $sql_push !== ""){
                     if(mysqli_query($dbconnection,$sql_push)){
