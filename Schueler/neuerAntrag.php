@@ -148,14 +148,14 @@ if (!isset($_SESSION['login'])) {
                                     <!--Placeholder Option, muss einfach nur existieren-->
                                     <option value=""></option>
                                     <?php
-                                    $sql_item = "SELECT ID, Bezeichnung FROM gegenstände";
+                                    $sql_item = "SELECT ID, Bezeichnung, AnzahlGesamt, AnzahlMomentan FROM gegenstände";
                                     $sql_data_item = mysqli_query($dbconnection,$sql_item);
                                     $sql_rows_item = mysqli_num_rows($sql_data_item);
                                     $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
 
                                     for($l=0;$l<$sql_rows_item;$l++){
                                         $data1 = $sql_array_item[$l][0];
-                                        $data2 = $sql_array_item[$l][1];
+                                        $data2 = $sql_array_item[$l][3]."/".$sql_array_item[$l][2]." : ".$sql_array_item[$l][1];
                                         echo "<option value='$data1'>$data2</option>>";
                                     }
                                     ?>
@@ -172,7 +172,7 @@ if (!isset($_SESSION['login'])) {
                                 <select name="verleihung" id="verleihung" required>
                                     <option value="">- Verleihung -</option>
                                 <?php
-                                $sql_verleihung = "SELECT ID, Gegenstand, Anzahl FROM verleihungen WHERE VerliehenAn='".$_SESSION['ID']."'";
+                                $sql_verleihung = "SELECT ID, Gegenstand, Anzahl, Rückgabedatum FROM verleihungen WHERE VerliehenAn='".$_SESSION['ID']."'";
                                 $sql_data_verleihung = mysqli_query($dbconnection,$sql_verleihung);
                                 $sql_rows_verleihung = mysqli_num_rows($sql_data_verleihung);
                                 $sql_array_verleihung = mysqli_fetch_all($sql_data_verleihung,MYSQLI_BOTH);
@@ -184,6 +184,8 @@ if (!isset($_SESSION['login'])) {
                                     $sql_data_item = mysqli_query($dbconnection,$sql_item);
                                     $sql_array_item = mysqli_fetch_all($sql_data_item,MYSQLI_BOTH);
 
+                                    $build_content_name .= $sql_array_verleihung[$m][3];
+                                    $build_content_name .= " : ";
                                     $build_content_name .= $sql_array_verleihung[$m][2];
                                     $build_content_name .= "x ";
                                     $build_content_name .= $sql_array_item[0][0];
