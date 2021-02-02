@@ -340,7 +340,25 @@ main {
 .Inputfield2 {
     position:relative;left:33%;
 }
+textarea{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    height: auto;
+    background: transparent;
+    border-color: #3ea175;
+    height: 200px;
+    color: white;
+    font-family: Arial;
+    resize: none;
 
+}
+textarea:focus {
+    outline: none !important;
+    border-color: #3ea175;
+    box-shadow: 0 0 10px #3ea175;
+}
 /* Design der Textfelder*/
 .Inputfield2 input {
     padding: 10px 0;
@@ -351,6 +369,7 @@ main {
     border-bottom: 1px solid #fff;
     outline: none;
     background: transparent;
+    font-family: Arial;
 }
 
 /* Label des Textfeldes*/

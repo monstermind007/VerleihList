@@ -25,9 +25,11 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Navigation 100%">
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="Anträge 100% Bugfix">
+      <change afterPath="$PROJECT_DIR$/Lehrer/support.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Schueler/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/anträge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/support.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/support.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +136,7 @@
       <workItem from="1612204716350" duration="61000" />
       <workItem from="1612252454215" duration="733000" />
       <workItem from="1612264155103" duration="6433000" />
-      <workItem from="1612277619010" duration="3435000" />
+      <workItem from="1612277619010" duration="6188000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -297,7 +299,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612274003981</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Anträge 100% Bugfix">
+      <created>1612281306936</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1612281306936</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +370,8 @@
     <MESSAGE value="Admin Interface 50%" />
     <MESSAGE value="Admin Interface 60%" />
     <MESSAGE value="Navigation 100%" />
-    <option name="LAST_COMMIT_MESSAGE" value="Navigation 100%" />
+    <MESSAGE value="Anträge 100% Bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anträge 100% Bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

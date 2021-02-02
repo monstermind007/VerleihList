@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Schueler"]){
+if ("1" != $_SESSION["Lehrer"]){
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -14,10 +14,12 @@ if (isset($_POST["logoff"])) {
 ?>
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-    <meta charset="UTF-8"/>
-    <link rel="stylesheet" href="../style.css"/>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body id="body">
 <div class="container">
     <nav class="navigation_oben">
@@ -25,8 +27,9 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
+            <a class="active_link">Schüler</a>
             <a>Materialliste</a>
-            <a class="active_link">Profil</a>
+            <a>Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
@@ -34,7 +37,6 @@ if (isset($_POST["logoff"])) {
                 <i class="notification" aria-hidden="true"></i>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
-            </a>
         </div>
     </nav>
 
@@ -55,12 +57,12 @@ if (isset($_POST["logoff"])) {
                     $inhalt = $_POST["inhalt"];
 
                     $support = "INSERT INTO support (Von, Betreff, Inhalt) VALUES ('$id', '$betreff', '$inhalt')";
-                if (mysqli_query($dbconnection, $support)){
-                    print("<center>Support Ticket wurde übermittelt.</center>");
-                }
-                else {
-                    print("<center>Fehler</center>");
-                }
+                    if (mysqli_query($dbconnection, $support)){
+                        print("<center>Support Ticket wurde übermittelt.</center>");
+                    }
+                    else {
+                        print("<center>Fehler</center>");
+                    }
                 }
                 ?><br><br><br><br>
                 <div class="main__title">
@@ -73,24 +75,32 @@ if (isset($_POST["logoff"])) {
                         <input type="digits" name="betreff" required autocomplete="off">
                         <label>Betreff</label>
                     </div>
-                    <textarea maxlength="5000" name="inhalt" placeholder="Problem beschreiben:"></textarea>
-                    <br><br>
+                    <textarea maxlength="5000" name="inhalt" placeholder="Problem beschreiben:"></textarea><br><br>
                     <input type="submit" value="Ändern" name="ändern" id="submit2">
                 </form>
             </div>
-            </div>
+        </div>
     </main>
     <!-- Seitliche Navigation Links -->
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
         </div>
 
         <div class="sidebar_menu">
             <div class="sidebar_link active_menu_link">
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
+            </div>
+            <h2>Schüler</h2>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addstudent.php">Schüler Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -99,11 +109,7 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="anträge.php">Alle Anträge</a>
-            </div>
-            <div class="sidebar_link">
-                <i class="rechter_text"></i>
-                <a href="neuerAntrag.php">Antrag stellen</a>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">
@@ -133,3 +139,4 @@ if (isset($_POST["logoff"])) {
 </div>
 </body>
 </html>
+
