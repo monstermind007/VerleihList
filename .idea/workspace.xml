@@ -25,11 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="CSS">
-      <change afterPath="$PROJECT_DIR$/Admin/admins.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Admin/teachers.php" afterDir="false" />
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="ADMIN 80%">
+      <change afterPath="$PROJECT_DIR$/Admin/test.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Admin/students.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/students.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +141,8 @@
       <workItem from="1612352162518" duration="4877000" />
       <workItem from="1612362404695" duration="2871000" />
       <workItem from="1612433732598" duration="1904000" />
-      <workItem from="1612449135302" duration="2150000" />
+      <workItem from="1612449135302" duration="3382000" />
+      <workItem from="1612463879177" duration="532000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -341,7 +340,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612289914030</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="ADMIN 80%">
+      <created>1612451322718</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1612451322718</updated>
+    </task>
+    <task id="LOCAL-00030" summary="ADMIN 80%">
+      <created>1612452414201</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1612452414201</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -408,7 +421,8 @@
     <MESSAGE value="Anträge 100% Bugfix" />
     <MESSAGE value="Bugfix Hinzufügen von Profilen" />
     <MESSAGE value="CSS" />
-    <option name="LAST_COMMIT_MESSAGE" value="CSS" />
+    <MESSAGE value="ADMIN 80%" />
+    <option name="LAST_COMMIT_MESSAGE" value="ADMIN 80%" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

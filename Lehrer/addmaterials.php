@@ -27,7 +27,7 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
-            <a class="active_link">Schüler</a>
+            <a class="active_link">Materialliste</a>
             <a>Materialliste</a>
             <a>Profil</a>
         </div>
@@ -45,18 +45,12 @@ if (isset($_POST["logoff"])) {
         <div class="main_container">
             <?php
             if (isset($_POST["registrierung"])) {
-                $vorname = $_POST["vorname"];
-                $nachname = $_POST["nachname"];
-                $telefon = $_POST["telefon"];
-                $klasse = $_POST["klasse"];
-                $straße = $_POST["straße"];
-                $plz = $_POST["plz"];
-                $ort = $_POST["ort"];
-                $email = $_POST["email"];
-                $passwort = $_POST["passwort"];
-                $istadmin = "0";
-                $istschueler = "1";
-                $istlehrer = "0";
+                $bezeichnung = $_POST["bezeichnung"];
+                $anzahlGesamt = $_POST["anzahlGesamt"];
+                $anzahlMomentan = $_POST["anzahlMomentan"];
+                $letzteInventur = $_POST["letzteInventur"];
+                $lagerort = $_POST["lagerort"];
+                $kategorie = $_POST["kategorie"];
 
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
                 if(!$dbconnection)
@@ -65,8 +59,8 @@ if (isset($_POST["logoff"])) {
                     die("Verbindungsfehler");
                 }
 
-                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password, IstAdmin, IstSchüler, IstLehrer)
-                VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort', '$istadmin', $istschueler, $istlehrer)";
+                $eintrag = "INSERT INTO gegenstände (Bezeichnung, AnzahlGesamt, AnzahlMomentan, LetzteInventur, Lagerort, Kategorie)
+                VALUES ($bezeichnung', '$anzahlGesamt', '$anzahlMomentan', '$letzteInventur', '$lagerort', '$kategorie')";
 
                 if (mysqli_query($dbconnection, $eintrag)){
                     print("Erfolgreich eingetragen");
@@ -79,45 +73,33 @@ if (isset($_POST["logoff"])) {
             <div class="Main">
                 <div class="main__title">
                     <center>
-                        <h1>Schüler Hinzufügen</h1>
+                        <h1>Materialien anlegen</h1>
                     </center>
                 </div><br><br>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="Inputfield2">
-                        <input type="digits" name="vorname" required autocomplete="off">
-                        <label>Vorname</label>
+                        <input type="digits" name="bezeichnung" required autocomplete="off">
+                        <label>Bezeichnung</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="digits" name="nachname" required autocomplete="off">
-                        <label>Nachname</label>
+                        <input type="digits" name="anzahlGesamt" required autocomplete="off">
+                        <label>AnzahlGesamt</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="number" name="telefon" required autocomplete="off">
-                        <label>Telefon</label>
+                        <input type="number" name="anzahlMomentan" required autocomplete="off">
+                        <label>AnzahlMomentan</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="digits" name="klasse" required autocomplete="off">
-                        <label>Klasse</label>
+                        <input type="date" name="letzteInventur" required autocomplete="off">
+                        <label>LetzteInventur</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="digits" name="straße" required autocomplete="off">
-                        <label>Straße & Hausnummer</label>
+                        <input type="digits" name="lagerort" required autocomplete="off">
+                        <label>Lagerort</label>
                     </div>
                     <div class="Inputfield2">
-                        <input type="number" name="plz" required autocomplete="off">
-                        <label>PLZ</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="ort" required autocomplete="off">
-                        <label>Ort</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="email" name="email" required autocomplete="off">
-                        <label>E-Mail</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="password" name="passwort" required autocomplete="off">
-                        <label>Passwort</label>
+                        <input type="number" name="kategorie" required autocomplete="off">
+                        <label>Kategorie</label>
                     </div>
                     <input type="submit" value="Anlegen" name="registrierung" id="submit2">
                 </form>
@@ -139,7 +121,7 @@ if (isset($_POST["logoff"])) {
             <h2>Schüler</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="students.php">Schüler Verwalten</a>
+                <a href="addstudent.php">Schüler Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>

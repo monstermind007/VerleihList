@@ -120,14 +120,26 @@ input[type=number]::-webkit-outer-spin-button {
 
 /* Notification*/
 .navigation_oben_rechts > a > i {
-    color: #a5aaad;
+    color: black;
     font-size: 16px;
     border-radius: 50px;
     background: #3ea175;
-    box-shadow: 2px 2px 5px #d9d9d9, -2px -2px 5px #ffffff;
     padding: 7px;
 }
 
+.count-container hidden, .count-container {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 18px;
+    height: 18px;
+    background: red;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
 
 main {
     background: linear-gradient(#141e30, #101922);
@@ -401,10 +413,6 @@ th {
     align-items: center;
     display: flex;
     margin: auto;
-}
-
-.active, .accordion:hover {
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
 }
 
 .accordion:after {
