@@ -44,6 +44,11 @@ if (isset($_POST["logoff"])) {
     <main>
         <div class="main_container">
             <?php
+            @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+            if (!$dbconnection) {
+                error_log("Fehler beim Verbinden der Datenbank");
+                die("Verbindungsfehler");
+            }
             if (isset($_POST["registrierung"])) {
                 $bezeichnung = $_POST["bezeichnung"];
                 $anzahlGesamt = $_POST["anzahlGesamt"];
@@ -52,14 +57,8 @@ if (isset($_POST["logoff"])) {
                 $lagerort = $_POST["lagerort"];
                 $kategorie = $_POST["kategorie"];
 
-                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                if (!$dbconnection) {
-                    error_log("Fehler beim Verbinden der Datenbank");
-                    die("Verbindungsfehler");
-                }
-
                 $eintrag = "INSERT INTO gegenstände (Bezeichnung, AnzahlGesamt, AnzahlMomentan, LetzteInventur, Lagerort, Kategorie)
-                VALUES ($bezeichnung', '$anzahlGesamt', '$anzahlMomentan', '$letzteInventur', '$lagerort', '$kategorie')";
+                VALUES ('".$bezeichnung."', '".$anzahlGesamt."', '".$anzahlMomentan."', '".$letzteInventur."', '".$lagerort."', '".$kategorie."')";
 
                 if (mysqli_query($dbconnection, $eintrag)) {
                     print("Erfolgreich eingetragen");
@@ -88,14 +87,21 @@ if (isset($_POST["logoff"])) {
                         <input type="digits" name="lagerort" required autocomplete="off">
                         <label>Lagerort</label>
                     </div>
-                    <select name="kategorie"></select>
+                    <select name="kategorie">
                     <?php
                     $query = "SELECT * FROM kategorien";
-                    $r = mysqli_query($query);
+                    $r = mysqli_query($dbconnection,$query);
+                    $array = mysqli_fetch_all($r);
+                    foreach ($array as $arr){
+                        echo "<option value='$arr[0]'>$arr[1]</option>";
+                    }
+                    /*
                     while ($spalte = mysqli_fetch_array($r)){
                         echo "<option>".$spalte["ID"]."</option>";
                     }
+                    */
                     ?>
+                    </select>
                     <input type="submit" value="Anlegen" name="registrierung" id="submit2">
                 </form>
             </div>
