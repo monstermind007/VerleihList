@@ -43,84 +43,52 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
-            <?php
-            if (isset($_POST["registrierung"])) {
-                $vorname = $_POST["vorname"];
-                $nachname = $_POST["nachname"];
-                $telefon = $_POST["telefon"];
-                $klasse = $_POST["klasse"];
-                $straße = $_POST["straße"];
-                $plz = $_POST["plz"];
-                $ort = $_POST["ort"];
-                $email = $_POST["email"];
-                $passwort = $_POST["passwort"];
-                $istadmin = "0";
-                $istschueler = "1";
-                $istlehrer = "0";
-
+            <div class="Hauptteil">
+                <?php
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                if(!$dbconnection)
-                {
+                if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
-
-                $eintrag = "INSERT INTO personen (Vorname, Name, Telefon, Klasse, Straße, PLZ, Ort, EMail, Password, IstAdmin, IstSchüler, IstLehrer)
-                VALUES ('$vorname', '$nachname', '$telefon', '$klasse', '$straße', '$plz', '$ort', '$email', '$passwort', '$istadmin', $istschueler, $istlehrer)";
-
-                if (mysqli_query($dbconnection, $eintrag)){
-                    print("Erfolgreich eingetragen");
-                }
-                else {
-                    die("Fehler!");
-                }
-            }
-            ?>
-            <div class="Main">
+                ?>
+                <br><br>
                 <div class="main__title">
                     <center>
-                        <h1>Schüler Hinzufügen</h1>
+                        <h1>Schüler</h1>
                     </center>
                 </div><br><br>
-                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                    <div class="Inputfield2">
-                        <input type="digits" name="vorname" required autocomplete="off">
-                        <label>Vorname</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="nachname" required autocomplete="off">
-                        <label>Nachname</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="telefon" required autocomplete="off">
-                        <label>Telefon</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="klasse" required autocomplete="off">
-                        <label>Klasse</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="straße" required autocomplete="off">
-                        <label>Straße & Hausnummer</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="plz" required autocomplete="off">
-                        <label>PLZ</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="digits" name="ort" required autocomplete="off">
-                        <label>Ort</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="email" name="email" required autocomplete="off">
-                        <label>E-Mail</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="password" name="passwort" required autocomplete="off">
-                        <label>Passwort</label>
-                    </div>
-                    <input type="submit" value="Anlegen" name="registrierung" id="submit2">
-                </form>
+                <table class="table table-bordered print">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>E-Mail</th>
+                        <th>Telefon</th>
+                        <th>Adresse</th>
+                        <th>Klasse</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <?php
+                    $ID = 1;
+                    $user_qry = "SELECT * from personen WHERE personen.IstSchüler = 1";
+                    $user_res = mysqli_query($dbconnection, $user_qry);
+                    while ($user_data = mysqli_fetch_assoc($user_res)) {
+                        ?>
+                        <tr>
+                            <td><?php echo $user_data['ID']; ?></td>
+                            <td><?php echo $user_data['Vorname']. " " .$user_data["Name"]; ?></td>
+                            <td><?php echo $user_data['EMail']; ?></td>
+                            <td><?php echo $user_data['Telefon']; ?></td>
+                            <td><?php echo $user_data['Straße']. " " . $user_data["PLZ"]. " ". $user_data["Ort"]; ?></td>
+                            <td><?php echo $user_data['Klasse']; ?></td>
+                        </tr>
+                        <?php
+                        $ID++;
+                    }
+                    ?>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>
@@ -182,3 +150,4 @@ if (isset($_POST["logoff"])) {
 </div>
 </body>
 </html>
+

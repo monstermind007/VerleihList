@@ -110,7 +110,7 @@ if (isset($_POST["logoff"])) {
             <h2>Schüler</h2>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="addstudent.php">Schüler Verwalten</a>
+                <a href="students.php">Schüler Verwalten</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
