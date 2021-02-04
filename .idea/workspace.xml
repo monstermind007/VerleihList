@@ -26,8 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="CSS">
+      <change afterPath="$PROJECT_DIR$/Admin/admins.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Admin/teachers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Admin/students.php" beforeDir="false" afterPath="$PROJECT_DIR$/Admin/students.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../event-kalender" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -135,7 +138,12 @@
       <workItem from="1612252454215" duration="733000" />
       <workItem from="1612264155103" duration="6433000" />
       <workItem from="1612277619010" duration="6222000" />
-      <workItem from="1612288018517" duration="1800000" />
+      <workItem from="1612288018517" duration="1816000" />
+      <workItem from="1612290418874" duration="1331000" />
+      <workItem from="1612352162518" duration="4877000" />
+      <workItem from="1612362404695" duration="2871000" />
+      <workItem from="1612433732598" duration="1904000" />
+      <workItem from="1612449135302" duration="2150000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -326,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612289819025</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="CSS">
+      <created>1612289914030</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1612289914030</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -394,17 +409,6 @@
     <MESSAGE value="Bugfix Hinzufügen von Profilen" />
     <MESSAGE value="CSS" />
     <option name="LAST_COMMIT_MESSAGE" value="CSS" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/index.php</url>
-          <line>51</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
