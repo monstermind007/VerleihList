@@ -17,6 +17,7 @@ if (isset($_POST["logoff"])) {
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="body">
 <div class="container">
@@ -68,6 +69,8 @@ if (isset($_POST["logoff"])) {
                         <th>Letzte Inventur</th>
                         <th>Lagerort</th>
                         <th>Kategorie</th>
+                        <th>Löschen</th>
+                        <th>Bearbeiten</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -85,6 +88,10 @@ if (isset($_POST["logoff"])) {
                             <td><?php echo $user_data['LetzteInventur']; ?></td>
                             <td><?php echo $user_data['Lagerort']; ?></td>
                             <td><?php echo $user_data['Kategorie']; ?></td>
+                            <td><a href="delete.php?id=<?php echo $user_data['ID'];?>"><center><i class="fa fa-trash" aria-hidden="true"></center></i>
+                                </a></td>
+                            <td><a href='#'><center><i class="fa fa-pencil" aria-hidden="true"></center></i>
+                                </a></td>
                         </tr>
                         <?php
                         $ID++;
