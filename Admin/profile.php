@@ -31,6 +31,7 @@ if (isset($_POST["logoff"])) {
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
+            <a href="support.php"><img src="support.png"></a>
             <a href="#">
                 <i class="notification" aria-hidden="true"></i>
             </a>
@@ -97,7 +98,7 @@ if (isset($_POST["logoff"])) {
         </div>
 
         <div class="sidebar_menu">
-            <div class="sidebar_link active_menu_link">
+            <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
@@ -144,7 +145,7 @@ if (isset($_POST["logoff"])) {
                 <i class="rechter_text"></i>
                 <a href="daten.php">Profildaten</a>
             </div>
-            <div class="sidebar_link">
+            <div class="sidebar_link active_menu_link">
                 <i class="rechter_text"></i>
                 <a href="profile.php">Daten ändern</a>
             </div>
@@ -159,6 +160,7 @@ if (isset($_POST["logoff"])) {
                 </form>
             </div>
         </div>
+        <script>history.pushState({}, "", "")</script>
     </div>
 </div>
 </body>

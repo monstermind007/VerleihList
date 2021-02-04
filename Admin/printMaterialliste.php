@@ -65,6 +65,7 @@ if (!$dbconnection) {
                 </tbody>
             </table>
         </div>
+        <script>history.pushState({}, "", "")</script>
     </div>
 </div>
 </body>

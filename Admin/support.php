@@ -24,13 +24,14 @@ if (isset($_POST["logoff"])) {
         <div class="nav_icon" onclick="toggleSidebar()">
         </div>
         <div class="navigation_oben__links">
-            <a class="active_link">Dashboard</a>
+            <a>Dashboard</a>
             <a>User</a>
             <a>Materialliste</a>
             <a>Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
+            <a class="active_link" href="support.php"><img src="support.png"></a>
             <a href="#">
                 <i class="notification" aria-hidden="true"></i>
             </a>
@@ -43,7 +44,6 @@ if (isset($_POST["logoff"])) {
     <main>
         <div class="main_container">
             <div class="main__title">
-                <h1>Hallo <?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?> </h1>
             </div>
             <div class="Hauptteil">
                 <?php
