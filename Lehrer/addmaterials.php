@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Lehrer"]){
+if ("1" != $_SESSION["Lehrer"]) {
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -16,8 +16,8 @@ if (isset($_POST["logoff"])) {
 <html lang="de">
 
 <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="../style.css" />
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" href="../style.css"/>
 </head>
 
 <body id="body">
@@ -27,8 +27,8 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
+            <a>Schüler</a>
             <a class="active_link">Materialliste</a>
-            <a>Materialliste</a>
             <a>Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
@@ -53,8 +53,7 @@ if (isset($_POST["logoff"])) {
                 $kategorie = $_POST["kategorie"];
 
                 @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
-                if(!$dbconnection)
-                {
+                if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
@@ -62,10 +61,9 @@ if (isset($_POST["logoff"])) {
                 $eintrag = "INSERT INTO gegenstände (Bezeichnung, AnzahlGesamt, AnzahlMomentan, LetzteInventur, Lagerort, Kategorie)
                 VALUES ($bezeichnung', '$anzahlGesamt', '$anzahlMomentan', '$letzteInventur', '$lagerort', '$kategorie')";
 
-                if (mysqli_query($dbconnection, $eintrag)){
+                if (mysqli_query($dbconnection, $eintrag)) {
                     print("Erfolgreich eingetragen");
-                }
-                else {
+                } else {
                     die("Fehler!");
                 }
             }
@@ -75,7 +73,8 @@ if (isset($_POST["logoff"])) {
                     <center>
                         <h1>Materialien anlegen</h1>
                     </center>
-                </div><br><br>
+                </div>
+                <br><br>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
                     <div class="Inputfield2">
                         <input type="digits" name="bezeichnung" required autocomplete="off">
@@ -83,24 +82,20 @@ if (isset($_POST["logoff"])) {
                     </div>
                     <div class="Inputfield2">
                         <input type="digits" name="anzahlGesamt" required autocomplete="off">
-                        <label>AnzahlGesamt</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="anzahlMomentan" required autocomplete="off">
-                        <label>AnzahlMomentan</label>
-                    </div>
-                    <div class="Inputfield2">
-                        <input type="date" name="letzteInventur" required autocomplete="off">
-                        <label>LetzteInventur</label>
+                        <label>Anzahl</label>
                     </div>
                     <div class="Inputfield2">
                         <input type="digits" name="lagerort" required autocomplete="off">
                         <label>Lagerort</label>
                     </div>
-                    <div class="Inputfield2">
-                        <input type="number" name="kategorie" required autocomplete="off">
-                        <label>Kategorie</label>
-                    </div>
+                    <select name="kategorie"></select>
+                    <?php
+                    $query = "SELECT * FROM kategorien";
+                    $r = mysqli_query($query);
+                    while ($spalte = mysqli_fetch_array($r)){
+                        echo "<option>".$spalte["ID"]."</option>";
+                    }
+                    ?>
                     <input type="submit" value="Anlegen" name="registrierung" id="submit2">
                 </form>
             </div>
@@ -110,7 +105,7 @@ if (isset($_POST["logoff"])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
         </div>
 
         <div class="sidebar_menu">
