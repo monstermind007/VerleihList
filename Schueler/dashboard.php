@@ -31,6 +31,7 @@ if (isset($_POST["logoff"])) {
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
+            <a class="active_link" href="support.php"><img src="support.png"></a>
             <a href="messages.php">
                 <i class="fa fa-bell-o" aria-hidden="true"></i>
                 <div class="count-container hidden" data-region="count-container">0</div>
