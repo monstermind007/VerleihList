@@ -130,7 +130,7 @@ if (isset($_POST["logoff"])) {
                     <tr>
                         <td>
                             <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">                            <!--form für neuen Antrag-->
-                                <select name="Kategorie" id="kategorie" data-child-id="gegenstand" class="dependent-selects__parent">   <!--data-child-id ist die ID von der abhängigen dropdown liste, die classe ist für die library um zu sagen dass es der parent ist-->
+                               <center> <select name="Kategorie" id="kategorie" data-child-id="gegenstand" class="dependent-selects__parent">   <!--data-child-id ist die ID von der abhängigen dropdown liste, die classe ist für die library um zu sagen dass es der parent ist-->
                                     <option value="" selected="selected">- Kategorien -</option>
                                     <?php
                                     $sql_kategorie = "SELECT ID, Name FROM kategorien";                                 // db Befehle für kategorien
@@ -160,7 +160,7 @@ if (isset($_POST["logoff"])) {
                                     }
                                     ?>
                                 </select>
-                                <br>
+                                <br><br>
                                 <select name="gegenstand" id="gegenstand" class="dependent-selects__child" required>    <!--Untergeordnete Dropdown Liste, wird signalisiert durch die Klasse-->
                                     <option value=""></option>                                                          <!--Placeholder Option, muss einfach nur existieren-->
                                     <?php
@@ -176,6 +176,7 @@ if (isset($_POST["logoff"])) {
                                     }
                                     ?>
                                 </select><br><br>
+                               </center>
                                 <div class="Inputfield2">
                                     <input type="number" name="anzahl" required autocomplete="off">                     <!--Input für anzahl der auszuleihenden Gegenstände-->
                                     <label>Anzahl</label>
@@ -189,7 +190,8 @@ if (isset($_POST["logoff"])) {
                         </td>
                         <td>
                             <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">                            <!--form für Antrag auf Änderung des Abgabedatums-->
-                                <select name="verleihung" id="verleihung" required>                                     <!--normale dropdownliste, ohne Kaskadierung, für die Verleihung, welche verändert werden möchte-->
+                                <center>
+                                <select name="verleihung" id="verleihung" required>
                                     <option value="">- Verleihung -</option>
                                 <?php
                                 $sql_verleihung = "SELECT ID, Gegenstand, Anzahl, Rückgabedatum FROM verleihungen WHERE VerliehenAn='".$_SESSION['ID']."'"; // db Befehle für Verleihungen in abhängigkeit der Session ID
@@ -214,6 +216,8 @@ if (isset($_POST["logoff"])) {
                                 }
                                 ?>
                                 </select>
+                                </center>
+                                <br>
                                 <div class="Inputfield2">
                                     <p>Neues Abgabedatum</p>
                                     <input type="date" name="abgabedatum" required autocomplete="off">                  <!--Input für neues Abgabedatum-->
