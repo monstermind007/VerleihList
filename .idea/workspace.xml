@@ -25,10 +25,8 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="ADMIN 80%">
-      <change afterPath="$PROJECT_DIR$/Admin/test.php" afterDir="false" />
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="BUG FIX">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,13 +73,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../event-kalender" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Admin" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Schueler" />
       <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Lehrer" />
     </key>
   </component>
@@ -143,6 +145,9 @@
       <workItem from="1612433732598" duration="1904000" />
       <workItem from="1612449135302" duration="3382000" />
       <workItem from="1612463879177" duration="532000" />
+      <workItem from="1612464436781" duration="261000" />
+      <workItem from="1612464723715" duration="232000" />
+      <workItem from="1612465288678" duration="9049000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -354,7 +359,77 @@
       <option name="project" value="LOCAL" />
       <updated>1612452414201</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Test">
+      <created>1612464585497</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1612464585497</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Test">
+      <created>1612464747080</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1612464747080</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Test">
+      <created>1612464907294</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1612464907294</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Fix Druck">
+      <created>1612465835802</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1612465835802</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Addmaterials">
+      <created>1612467158487</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1612467158487</updated>
+    </task>
+    <task id="LOCAL-00036" summary="BUG FIX">
+      <created>1612469999437</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1612469999437</updated>
+    </task>
+    <task id="LOCAL-00037" summary="BUG FIX">
+      <created>1612470546171</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1612470546171</updated>
+    </task>
+    <task id="LOCAL-00038" summary="BUG FIX 100% Admin">
+      <created>1612470726500</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1612470726500</updated>
+    </task>
+    <task id="LOCAL-00039" summary="CSS Select">
+      <created>1612471610670</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1612471610670</updated>
+    </task>
+    <task id="LOCAL-00040" summary="BUG FIX">
+      <created>1612472691852</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1612472691852</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,9 +475,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="+ LOL" />
-    <MESSAGE value="+ CSS&#10;+ INDEX" />
-    <MESSAGE value="test" />
     <MESSAGE value="+ test2" />
     <MESSAGE value="+ test SQL" />
     <MESSAGE value="+ test1 SQL" />
@@ -422,7 +494,13 @@
     <MESSAGE value="Bugfix Hinzufügen von Profilen" />
     <MESSAGE value="CSS" />
     <MESSAGE value="ADMIN 80%" />
-    <option name="LAST_COMMIT_MESSAGE" value="ADMIN 80%" />
+    <MESSAGE value="Test" />
+    <MESSAGE value="Fix Druck" />
+    <MESSAGE value="Addmaterials" />
+    <MESSAGE value="BUG FIX 100% Admin" />
+    <MESSAGE value="CSS Select" />
+    <MESSAGE value="BUG FIX" />
+    <option name="LAST_COMMIT_MESSAGE" value="BUG FIX" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
