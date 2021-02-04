@@ -17,6 +17,7 @@ if (isset($_POST["logoff"])) {
 <head>
     <meta charset="UTF-8"/>
     <link rel="stylesheet" href="../style.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body id="body">
 <div class="container">
@@ -32,8 +33,9 @@ if (isset($_POST["logoff"])) {
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
             <a class="active_link" href="support.php"><img src="support.png"></a>
-            <a href="#">
-                <i class="notification" aria-hidden="true"></i>
+            <a href="messages.php">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                <div class="count-container hidden" data-region="count-container">0</div>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
             </a>
