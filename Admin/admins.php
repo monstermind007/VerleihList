@@ -53,7 +53,7 @@ if (isset($_POST["logoff"])) {
                 <br><br>
                 <div class="main__title">
                     <center>
-                        <h1>Schüler</h1>
+                        <h1>Admins</h1>
                     </center>
                 </div><br><br>
                 <table class="table table-bordered print">
@@ -64,13 +64,12 @@ if (isset($_POST["logoff"])) {
                         <th>E-Mail</th>
                         <th>Telefon</th>
                         <th>Adresse</th>
-                        <th>Klasse</th>
                     </tr>
                     </thead>
                     <tbody>
                     <?php
                     $ID = 1;
-                    $user_qry = "SELECT * from personen WHERE personen.IstSchüler = 1";
+                    $user_qry = "SELECT * from personen WHERE personen.IstAdmin = 1";
                     $user_res = mysqli_query($dbconnection, $user_qry);
                     while ($user_data = mysqli_fetch_assoc($user_res)) {
                         ?>
@@ -80,7 +79,6 @@ if (isset($_POST["logoff"])) {
                             <td><?php echo $user_data['EMail']; ?></td>
                             <td><?php echo $user_data['Telefon']; ?></td>
                             <td><?php echo $user_data['Straße']. " " . $user_data["PLZ"]. " ". $user_data["Ort"]; ?></td>
-                            <td><?php echo $user_data['Klasse']; ?></td>
                         </tr>
                         <?php
                         $ID++;
