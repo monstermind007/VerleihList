@@ -72,6 +72,9 @@ if (isset($_POST["logoff"])) {
                 if(isset($_POST['antragNeu'])){
                     $gegenstand = $_POST['gegenstand'];
                     $anzahl = $_POST['anzahl'];
+                    $datum0 = $_POST['abgabedatum0'];
+                    $dateTime0 = DateTime::createFromFormat('Y-m-d',$datum0);
+                    $heute = new DateTime("midnight");
                     $sql_item = "SELECT AnzahlGesamt,AnzahlMomentan FROM gegenstände WHERE ID='".$gegenstand."'";
                     $sql_data_item = mysqli_query($dbconnection,$sql_item);
                     $sql_array_item = mysqli_fetch_array($sql_data_item);
@@ -81,8 +84,11 @@ if (isset($_POST["logoff"])) {
                     } elseif ($sql_array_item[1] < $anzahl){
                         $feedback = "Momentan sind nicht genug Gegenstände dieser Art zur Verfügung.<br>Bitte warten Sie bis wieder genug zur verfügung stehen.";
                         $sql_push = "";
+                    } elseif ($dateTime0<$heute) {
+                        $feedback = "Ihr Abgabedatum ist in der Vergangenheit.<br>Bitte wählen Sie ein valides Datum";
+                        $sql_push = "";
                     } else {
-                        $sql_push = "INSERT INTO anträge (Von,Gegenstand,Anzahl) VALUES ($von,$gegenstand,$anzahl)";
+                        $sql_push = "INSERT INTO anträge (Von,Gegenstand,Anzahl,AbgabeDatum) VALUES ($von,$gegenstand,$anzahl,'" . $datum0 . "')";
                     }
                 }
                 if (isset($_POST['antragAbgabe'])){
@@ -170,6 +176,10 @@ if (isset($_POST["logoff"])) {
                                 <div class="Inputfield2">
                                     <input type="number" name="anzahl" required autocomplete="off">
                                     <label>Anzahl</label>
+                                </div>
+                                <div class="Inputfield2">
+                                    <p>Abgabedatum</p>
+                                    <input type="date" name="abgabedatum0" required autocomplete="off">
                                 </div>
                                 <input type="submit" value="Antrag Stellen" name="antragNeu" id="submit2">
                             </form>
