@@ -101,6 +101,7 @@ if (isset($_POST["logoff"])) {
                         $sql_data_res3 = mysqli_query($dbconnection, $sql_data3);
                         $sql_array3 = mysqli_fetch_array($sql_data_res3);
                         ?>
+
                         <tr>
                             <td><?php echo $sql_array2["Bezeichnung"]; ?></td>
                             <td><?php echo $sql_array3["Name"]; ?></td>
