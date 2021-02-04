@@ -9,7 +9,6 @@ if (isset($_SESSION["login"])) {
         header("Location:Admin/dashboard.php");
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html>

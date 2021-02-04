@@ -73,6 +73,7 @@ if (isset($_POST["logoff"])) {
 
                     <tbody>
                     <?php
+                    $ID = 1;
                     $sql_data = "SELECT * FROM verleihungen WHERE verleihungen.VerliehenAn = '" . $_SESSION['ID'] . "' ";
                     $sql_data_res = mysqli_query($dbconnection, $sql_data);
                     $sql_array = mysqli_fetch_array($sql_data_res);
