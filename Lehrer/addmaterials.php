@@ -45,7 +45,6 @@ if (isset($_POST["logoff"])) {
         <div class="main_container">
             <?php
             if (isset($_POST["registrierung"])) {
-                $id = $_POST["material_id"];
                 $bezeichnung = $_POST["bezeichnung"];
                 $anzahlGesamt = $_POST["anzahlGesamt"];
                 $anzahlMomentan = $_POST["anzahlMomentan"];
@@ -60,15 +59,8 @@ if (isset($_POST["logoff"])) {
                     die("Verbindungsfehler");
                 }
 
-                $eintrag = "INSERT INTO gegenstände (ID, Bezeichnung, AnzahlGesamt, AnzahlMomentan, LetzteInventur, Lagerort, Kategorie)
-                VALUES ('$id','$bezeichnung', '$anzahlGesamt', '$anzahlMomentan', '$letzteInventur', '$lagerort', '$kategorie')";
-                $result = mysqli_fetch_assoc($eintrag);
-                $num = mysqli_num_rows($eintrag);
-                if($num) {
-                    "UPDATE gegenstände SET ID = $id , Bezeichnung = $bezeichnung , AnzahlGesamt = $anzahlGesamt , AnzahlMomentan = $anzahlMomentan , LetzteInventur = $letzteInventur , Lagerort = $lagerort , Kategorie = $kategorie WHERE ID = '".$result['material_id']."'";
-                } else {
-                    "INSERT INTO gegenstände (ID, Bezeichnung, AnzahlGesamt, AnzahlMomentan, LetzteInventur, Lagerort, Kategorie) VALUES ('$id','$bezeichnung', '$anzahlGesamt', '$anzahlMomentan', '$letzteInventur', '$lagerort', '$kategorie')";
-                }
+                $eintrag = "INSERT INTO gegenstände (Bezeichnung, AnzahlGesamt, AnzahlMomentan, LetzteInventur, Lagerort, Kategorie)
+                VALUES ($bezeichnung', '$anzahlGesamt', '$anzahlMomentan', '$letzteInventur', '$lagerort', '$kategorie')";
 
                 if (mysqli_query($dbconnection, $eintrag)){
                     print("Erfolgreich eingetragen");
@@ -85,10 +77,6 @@ if (isset($_POST["logoff"])) {
                     </center>
                 </div><br><br>
                 <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-                    <div class="Inputfield2">
-                        <input type="digits" name="material_id" required autocomplete="off">
-                        <label>ID</label>
-                    </div>
                     <div class="Inputfield2">
                         <input type="digits" name="bezeichnung" required autocomplete="off">
                         <label>Bezeichnung</label>
