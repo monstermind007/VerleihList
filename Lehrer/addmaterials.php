@@ -90,7 +90,7 @@ if (isset($_POST["logoff"])) {
                         <input type="digits" name="lagerort" required autocomplete="off">
                         <label>Lagerort</label>
                     </div>
-                    <select name="kategorie">
+                    <center><select name="kategorie">
                     <?php
                     $query = "SELECT * FROM kategorien";
                     $r = mysqli_query($dbconnection,$query);
@@ -104,7 +104,7 @@ if (isset($_POST["logoff"])) {
                     }
                     */
                     ?>
-                    </select>
+                        </select></center><br>
                     <input type="submit" value="Anlegen" name="registrierung" id="submit2">
                 </form>
             </div>
