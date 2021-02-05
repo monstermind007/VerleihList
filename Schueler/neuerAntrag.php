@@ -112,7 +112,7 @@ if (isset($_POST["logoff"])) {
                     if(mysqli_query($dbconnection,$sql_push)){                                                          // daten werden in die DB gedrückt, gleichzeitig wird geguckt ob es geklappt hat oder nicht und das feedback wird entsprechend eingestellt
                         $feedback = "Antrag wurde erfolgreich eingereicht.<br>Bitte warten Sie, bis ein Lehrer ihn bearbeitet.";
                     } else {
-                        $feedback = "Es gab einen Fehler beim Einreichen ihres Antrags.<br>Bitte überprüfen Sie ihre Daten und versuchen es erneut.<br>Sollte es weitere Probleme geben kontaktieren Sie bitte einen Admin.".mysqli_error($dbconnection);
+                        $feedback = "Es gab einen Fehler beim Einreichen ihres Antrags.<br>Bitte überprüfen Sie ihre Daten und versuchen es erneut.<br>Sollte es weitere Probleme geben kontaktieren Sie bitte einen Admin.";
                     }
                 }                                                                                                       // Zeile 115
                 ?>

@@ -25,8 +25,14 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="BUG FIX">
-      <change beforePath="$PROJECT_DIR$/Lehrer/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/messages.php" afterDir="false" />
+    <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="+Fix von Leon">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_12_41__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_12_41__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_14_09__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_29_01_2021_14_09__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2021_18_47__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_30_01_2021_18_47__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_03__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_05__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_26_01_2021_12_05__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Schueler/neuerAntrag.php" beforeDir="false" afterPath="$PROJECT_DIR$/Schueler/neuerAntrag.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +67,7 @@
     </file-type-list>
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.2" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1nbIWEyi66XvvSNJs1xOXv71qYy" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -73,17 +79,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Admin" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Schueler" />
       <recent name="C:\Users\jdoer\PhpstormProjects\VerleihList\Lehrer" />
     </key>
   </component>
@@ -138,17 +140,16 @@
       <workItem from="1612252454215" duration="733000" />
       <workItem from="1612264155103" duration="6433000" />
       <workItem from="1612277619010" duration="6222000" />
-      <workItem from="1612288018517" duration="1816000" />
-      <workItem from="1612290418874" duration="1331000" />
-      <workItem from="1612352162518" duration="4877000" />
-      <workItem from="1612362404695" duration="2871000" />
-      <workItem from="1612433732598" duration="1904000" />
-      <workItem from="1612449135302" duration="3382000" />
-      <workItem from="1612463879177" duration="532000" />
-      <workItem from="1612464436781" duration="261000" />
-      <workItem from="1612464723715" duration="232000" />
-      <workItem from="1612465288678" duration="21087000" />
-      <workItem from="1612506855983" duration="1537000" />
+      <workItem from="1612288018517" duration="1800000" />
+      <workItem from="1612291944631" duration="358000" />
+      <workItem from="1612377092991" duration="3618000" />
+      <workItem from="1612434543135" duration="2415000" />
+      <workItem from="1612449176935" duration="2922000" />
+      <workItem from="1612453604058" duration="11292000" />
+      <workItem from="1612466370171" duration="2596000" />
+      <workItem from="1612508323704" duration="604000" />
+      <workItem from="1612512109481" duration="109000" />
+      <workItem from="1612512267067" duration="50000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -339,133 +340,56 @@
       <option name="project" value="LOCAL" />
       <updated>1612289819025</updated>
     </task>
-    <task id="LOCAL-00028" summary="CSS">
-      <created>1612289914030</created>
+    <task id="LOCAL-00028" summary="+Alle funktionen sind fertig, evtl fehlen noch sidebars und CSS">
+      <created>1612380714081</created>
       <option name="number" value="00028" />
       <option name="presentableId" value="LOCAL-00028" />
       <option name="project" value="LOCAL" />
-      <updated>1612289914030</updated>
+      <updated>1612380714082</updated>
     </task>
-    <task id="LOCAL-00029" summary="ADMIN 80%">
-      <created>1612451322718</created>
+    <task id="LOCAL-00029" summary="+anträge.php für Lehrer existiert, kann noch nichts">
+      <created>1612435152114</created>
       <option name="number" value="00029" />
       <option name="presentableId" value="LOCAL-00029" />
       <option name="project" value="LOCAL" />
-      <updated>1612451322718</updated>
+      <updated>1612435152114</updated>
     </task>
-    <task id="LOCAL-00030" summary="ADMIN 80%">
-      <created>1612452414201</created>
+    <task id="LOCAL-00030" summary="+Abgabedatum bei neuem antrag wird nun mit übergeben">
+      <created>1612436586752</created>
       <option name="number" value="00030" />
       <option name="presentableId" value="LOCAL-00030" />
       <option name="project" value="LOCAL" />
-      <updated>1612452414201</updated>
+      <updated>1612436586752</updated>
     </task>
-    <task id="LOCAL-00031" summary="Test">
-      <created>1612464585497</created>
+    <task id="LOCAL-00031" summary="+Kommentare für die Doku">
+      <created>1612452025813</created>
       <option name="number" value="00031" />
       <option name="presentableId" value="LOCAL-00031" />
       <option name="project" value="LOCAL" />
-      <updated>1612464585497</updated>
+      <updated>1612452025813</updated>
     </task>
-    <task id="LOCAL-00032" summary="Test">
-      <created>1612464747080</created>
+    <task id="LOCAL-00032" summary="+Alles von Leon ist Fertig">
+      <created>1612466253288</created>
       <option name="number" value="00032" />
       <option name="presentableId" value="LOCAL-00032" />
       <option name="project" value="LOCAL" />
-      <updated>1612464747080</updated>
+      <updated>1612466253288</updated>
     </task>
-    <task id="LOCAL-00033" summary="Test">
-      <created>1612464907294</created>
+    <task id="LOCAL-00033" summary="+Fix von Leon">
+      <created>1612468945327</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1612464907294</updated>
+      <updated>1612468945327</updated>
     </task>
-    <task id="LOCAL-00034" summary="Fix Druck">
-      <created>1612465835802</created>
+    <task id="LOCAL-00034" summary="+Fix von Leon">
+      <created>1612512168981</created>
       <option name="number" value="00034" />
       <option name="presentableId" value="LOCAL-00034" />
       <option name="project" value="LOCAL" />
-      <updated>1612465835802</updated>
+      <updated>1612512168981</updated>
     </task>
-    <task id="LOCAL-00035" summary="Addmaterials">
-      <created>1612467158487</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1612467158487</updated>
-    </task>
-    <task id="LOCAL-00036" summary="BUG FIX">
-      <created>1612469999437</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1612469999437</updated>
-    </task>
-    <task id="LOCAL-00037" summary="BUG FIX">
-      <created>1612470546171</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1612470546171</updated>
-    </task>
-    <task id="LOCAL-00038" summary="BUG FIX 100% Admin">
-      <created>1612470726500</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1612470726500</updated>
-    </task>
-    <task id="LOCAL-00039" summary="CSS Select">
-      <created>1612471610670</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1612471610670</updated>
-    </task>
-    <task id="LOCAL-00040" summary="BUG FIX">
-      <created>1612472691852</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1612472691852</updated>
-    </task>
-    <task id="LOCAL-00041" summary="BUG FIX">
-      <created>1612480231948</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1612480231948</updated>
-    </task>
-    <task id="LOCAL-00042" summary="BUG FIX">
-      <created>1612480388386</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1612480388386</updated>
-    </task>
-    <task id="LOCAL-00043" summary="BUG FIX">
-      <created>1612508120102</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1612508120102</updated>
-    </task>
-    <task id="LOCAL-00044" summary="BUG FIX">
-      <created>1612508189161</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1612508189161</updated>
-    </task>
-    <task id="LOCAL-00045" summary="BUG FIX">
-      <created>1612508365630</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1612508365630</updated>
-    </task>
-    <option name="localTasksCounter" value="46" />
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -511,6 +435,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="test" />
     <MESSAGE value="+ test2" />
     <MESSAGE value="+ test SQL" />
     <MESSAGE value="+ test1 SQL" />
@@ -529,14 +454,13 @@
     <MESSAGE value="Anträge 100% Bugfix" />
     <MESSAGE value="Bugfix Hinzufügen von Profilen" />
     <MESSAGE value="CSS" />
-    <MESSAGE value="ADMIN 80%" />
-    <MESSAGE value="Test" />
-    <MESSAGE value="Fix Druck" />
-    <MESSAGE value="Addmaterials" />
-    <MESSAGE value="BUG FIX 100% Admin" />
-    <MESSAGE value="CSS Select" />
-    <MESSAGE value="BUG FIX" />
-    <option name="LAST_COMMIT_MESSAGE" value="BUG FIX" />
+    <MESSAGE value="+Alle funktionen sind fertig, evtl fehlen noch sidebars und CSS" />
+    <MESSAGE value="+anträge.php für Lehrer existiert, kann noch nichts" />
+    <MESSAGE value="+Abgabedatum bei neuem antrag wird nun mit übergeben" />
+    <MESSAGE value="+Kommentare für die Doku" />
+    <MESSAGE value="+Alles von Leon ist Fertig" />
+    <MESSAGE value="+Fix von Leon" />
+    <option name="LAST_COMMIT_MESSAGE" value="+Fix von Leon" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
