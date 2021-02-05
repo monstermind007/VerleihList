@@ -4,7 +4,7 @@ session_start();
 if (!isset($_SESSION['login'])) {
     header('Location:../index.php');
 }
-if ("1" != $_SESSION["Lehrer"]){
+if ("1" != $_SESSION["Lehrer"]) {
     header('Location:../index.php');
 }
 if (isset($_POST["logoff"])) {
@@ -60,21 +60,23 @@ if (isset($_POST["logoff"])) {
                             <th>Gegenstand</th>
                             <th>Anzahl</th>
                             <th>Abgabedatum</th>
-                            <th>Gelesen</th>
+                            <th>Annehmen</th>
                         </tr>
                         <?php
-                        $sql_antrag = "SELECT ID,Von,Gegenstand,Anzahl,AbgabeDatum, GelesenLehrer  FROM anträge WHERE GelesenLehrer=0";
-                        $sql_data_antrag = mysqli_query($dbconnection,$sql_antrag);
+                        $sql_antrag = "SELECT ID,Von,Gegenstand,Anzahl,AbgabeDatum,Angenommen  FROM anträge WHERE Angenommen=0";
+                        $sql_data_antrag = mysqli_query($dbconnection, $sql_antrag);
                         $sql_array_antrag = mysqli_fetch_all($sql_data_antrag, MYSQLI_BOTH);
-                        foreach ($sql_array_antrag as $val){
+                        foreach ($sql_array_antrag as $val) {
                             $valID = $val[0];
-                            print $valID;
-                            if(isset($_POST["$valID"])){
-                                $sql_update_antrag = "UPDATE anträge SET GelesenLehrer = 1 WHERE ID= $valID";
-                                if(mysqli_query($dbconnection,$sql_update_antrag)){
-                                    echo "Antrag wurde erfolgreich bestätigt!";
-                                } else {
-                                    echo "Antrag konnte nicht bestätigt werden.".mysqli_error($dbconnection);
+                            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                                if (isset($_POST[$valID])) {
+                                    $sql_update_antrag_angenommen = "UPDATE anträge SET Angenommen = 1 WHERE ID= $valID";
+                                    $sql_update_antrag_notification = "UPDATE anträge SET GelesenSchüler = 0 WHERE ID= $valID";
+                                    if (mysqli_query($dbconnection, $sql_update_antrag_angenommen)) {
+                                        echo "Antrag wurde erfolgreich bestätigt!";
+                                    } else {
+                                        echo "Antrag konnte nicht bestätigt werden." . mysqli_error($dbconnection);
+                                    }
                                 }
                             }
                         }
@@ -93,7 +95,7 @@ if (isset($_POST["logoff"])) {
                             echo "<td style='text-align: justify;'><h3>".$antrag['Gegenstand']."</td>";
                             echo "<td style='text-align: justify;'><h3>".$antrag['Anzahl']."</h3></td>";
                             echo "<td style='text-align: justify;'><h3>".$antrag['AbgabeDatum']."</td>";
-                            echo "<td><input type='submit' id='submit2' style='left: 0' value='Annehmen' name='$valID'></td>";
+                            echo "<td><input type='submit' id='submit2' style='left: 0' value='Annehmen' name={$antrag["ID"]}></td>";
                             echo"</tr>";
                         }
                         /*
