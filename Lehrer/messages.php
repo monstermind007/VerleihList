@@ -41,57 +41,83 @@ if (isset($_POST["logoff"])) {
     <!--Hauptteil -->
     <main>
         <div class="main_container">
+            <div class="main__title">
+            </div>
             <div class="Hauptteil">
                 <?php
-                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");
+                @$dbconnection = mysqli_connect("134.255.218.71:3306", "materiallisteDB", "1McR2.71", "materialverleihDB");    //Die momentane verbindung
+                //@$dbconnection = mysqli_connect("localhost", "root", "", "materialverleihDB"); //Zum testen weil der Server weg ist
                 if (!$dbconnection) {
                     error_log("Fehler beim Verbinden der Datenbank");
                     die("Verbindungsfehler");
                 }
                 ?>
-                <br><br><br><br>
-                <div class="main__title">
-                    <h1><center>Nachrichten</center></h1><br><br>
-                </div>
-                <table class="table table-bordered print">
-                    <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Von</th>
-                        <th>Gegenstand</th>
-                        <th>Anzahl</th>
-                        <th>Abgabe-Datum</th>
-                        <th>Angenommen</th>
-                        <th>Select</th>
-                        <th>Bestätigen</th>
-                        <th>Bearbeiten</th>
-                    </tr>
-
-                    <tbody>
-                    <?php
-                    $ID = 1;
-                    $user_qry = "SELECT * FROM `anträge` WHERE GelesenLehrer= 0";
-                    $user_res = mysqli_query($dbconnection, $user_qry);
-                    while ($user_data = mysqli_fetch_assoc($user_res)) {
-                    ?>
-                    <tr>
-                        <td><?php echo $user_data['ID']; ?></td>
-                        <td><?php echo $user_data['Von']; ?></td>
-                        <td><?php echo $user_data['Gegenstand']; ?></td>
-                        <td><?php echo $user_data['Anzahl']; ?></td>
-                        <td><?php echo $user_data['AbgabeDatum']; ?></td>
-                        <td><?php echo $user_data['Angenommen']; ?></td>
-
-                        <td><center><input type="checkbox" value="<?php $user_data['ID'];?>" required></center></td>
-                        <td><center><input type="submit" value="Bestätigen"</center></td>
-                        <td><center><a href="#"><i class="fa fa-pencil" aria-hidden="true"></i></a></center></td>
-                    </tr>
+                <br>
+                <form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Von</th>
+                            <th>Gegenstand</th>
+                            <th>Anzahl</th>
+                            <th>Abgabedatum</th>
+                            <th>Gelesen</th>
+                        </tr>
                         <?php
-                        $ID++;
+                        $sql_antrag = "SELECT ID,Von,Gegenstand,Anzahl,AbgabeDatum, GelesenLehrer  FROM anträge WHERE GelesenLehrer=0";
+                        $sql_data_antrag = mysqli_query($dbconnection,$sql_antrag);
+                        $sql_array_antrag = mysqli_fetch_all($sql_data_antrag, MYSQLI_BOTH);
+                        foreach ($sql_array_antrag as $val){
+                            $valID = $val[0];
+                            print $valID;
+                            if(isset($_POST["$valID"])){
+                                $sql_update_antrag = "UPDATE anträge SET GelesenLehrer = 1 WHERE ID= $valID";
+                                if(mysqli_query($dbconnection,$sql_update_antrag)){
+                                    echo "Antrag wurde erfolgreich bestätigt!";
+                                } else {
+                                    echo "Antrag konnte nicht bestätigt werden.".mysqli_error($dbconnection);
+                                }
+                            }
                         }
+                        unset($val);
+                        $sql_data_antrag = mysqli_query($dbconnection,$sql_antrag);
+                        $sql_array_antrag = mysqli_fetch_all($sql_data_antrag, MYSQLI_BOTH);
+                        foreach($sql_array_antrag as $antrag){
+                            $sql_personen = "SELECT * FROM personen WHERE ID = {$antrag['Von']}";
+                            $sql_data_personen = mysqli_query($dbconnection,$sql_personen);
+                            $sql_array_personen = mysqli_fetch_all($sql_data_personen, MYSQLI_BOTH);
+                            $sql_gegenstand = "SELECT * FROM gegenstände WHERE ID={$antrag['Gegenstand']}";
+                            $sql_data_gegenstand = mysqli_query($dbconnection,$sql_gegenstand);
+                            $sql_array_gegenstand = mysqli_fetch_all($sql_data_gegenstand, MYSQLI_BOTH);
+                            echo "<tr>";
+                            echo "<td style='min-width: 10em'>".$sql_array_personen[0]["Vorname"]."</td>";
+                            echo "<td style='text-align: justify;'><h3>".$antrag['Gegenstand']."</td>";
+                            echo "<td style='text-align: justify;'><h3>".$antrag['Anzahl']."</h3></td>";
+                            echo "<td style='text-align: justify;'><h3>".$antrag['AbgabeDatum']."</td>";
+                            echo "<td><input type='submit' id='submit2' style='left: 0' value='Annehmen' name='$valID'></td>";
+                            echo"</tr>";
+                        }
+                        /*
+                        $sql_rows_antrag = mysqli_num_rows($sql_data_antrag);
+                        for ($i=0;$i<$sql_rows_antrag;$i++){
+                            $k = $i+1;
+                            $sql_personen = "SELECT Name,Vorname FROM personen WHERE ID=$k";
+                            $sql_data_personen = mysqli_query($dbconnection,$sql_personen);
+                            $sql_array_personen = mysqli_fetch_all($sql_data_personen, MYSQLI_BOTH);
+                            $sql_gegenstand = "SELECT Bezeichnung FROM gegenstände WHERE ID=$k";
+                            $sql_data_gegenstand = mysqli_query($dbconnection,$sql_gegenstand);
+                            $sql_array_gegenstand = mysqli_fetch_array($sql_data_gegenstand);
+                            echo "<tr>";
+                            echo "<td style='min-width: 10em'>".$sql_array_personen[0]["Vorname"]."</td>";
+                            echo "<td style='text-align: justify;'><h3>".$sql_array_antrag[$i][2]."</td>";
+                            echo "<td style='text-align: justify;'><h3>".$sql_array_antrag[$i][3]."</h3></td>";
+                            echo "<td style='text-align: justify;'><h3>".$sql_array_antrag[$i][4]."</td>";
+                            echo "<td><input type='submit' id='submit2' style='left: 0' value='Annehmen' name='".$sql_array_antrag[$i][0]."'></td>";
+                            echo"</tr>";
+                        }
+                        */
                         ?>
-                    </tbody>
-                </table>
+                    </table>
+                </form>
             </div>
         </div>
     </main>
