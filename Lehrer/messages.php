@@ -27,8 +27,8 @@ if (isset($_POST["logoff"])) {
         <div class="navigation_oben__links">
             <a>Dashboard</a>
             <a>Schüler</a>
-            <a class="active_link">Materialliste</a>
-            <a>Profil</a>
+            <a>Materialliste</a>
+            <a class="active_link">Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
