@@ -26,13 +26,16 @@ if (isset($_POST["logoff"])) {
         </div>
         <div class="navigation_oben__links">
             <a>Dashboard</a>
+            <a>Schüler</a>
             <a class="active_link">Materialliste</a>
             <a>Profil</a>
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
-            <a href="#">
-                <i class="notification" aria-hidden="true"></i>
+            <a class="active_link" href="support.php"><img src="support.png"></a>
+            <a href="messages.php">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                <div class="count-container hidden" data-region="count-container">0</div>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
             </a>
@@ -127,12 +130,22 @@ if (isset($_POST["logoff"])) {
     <div id="sidebar">
         <div class="user">
             <!-- Hier könnte man noch ein Profilbild einstllen-->
-            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"]; ?></h1>
+            <h1><?php echo $_SESSION["Vorname"], " ", $_SESSION["Name"];?></h1>
         </div>
+
         <div class="sidebar_menu">
-            <div class="sidebar_link active_menu_link">
+            <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
+            </div>
+            <h2>Schüler</h2>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="students.php">Schüler Verwalten</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
             <div class="sidebar_link">
@@ -141,14 +154,14 @@ if (isset($_POST["logoff"])) {
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="anträge.php">Alle Anträge</a>
+                <a href="addmaterials.php">Materialien anlegen</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
-                <a href="neuerAntrag.php">Antrag stellen</a>
+                <a href="anträge.php">Offene Anträge</a>
             </div>
             <h2>Profil</h2>
-            <div class="sidebar_link">
+            <div class="sidebar_link active_menu_link">
                 <i class="rechter_text"></i>
                 <a href="messages.php">Nachrichten</a>
             </div>
@@ -173,7 +186,5 @@ if (isset($_POST["logoff"])) {
         </div>
     </div>
 </div>
-<script defer src="../dependent-selects.js"></script>
-<script>history.pushState({}, "", "")</script>
 </body>
 </html>

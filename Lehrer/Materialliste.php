@@ -32,8 +32,10 @@ if (isset($_POST["logoff"])) {
         </div>
         <!--Rechte Navigationsleiste mit Notification Symbol-->
         <div class="navigation_oben_rechts">
-            <a href="#">
-                <i class="notification" aria-hidden="true"></i>
+            <a class="active_link" href="support.php"><img src="support.png"></a>
+            <a href="messages.php">
+                <i class="fa fa-bell-o" aria-hidden="true"></i>
+                <div class="count-container hidden" data-region="count-container">0</div>
             </a>
             <!--Profilbild Datenbank wenn möglich-->
             </a>
@@ -110,7 +112,7 @@ if (isset($_POST["logoff"])) {
         </div>
 
         <div class="sidebar_menu">
-            <div class="sidebar_link active_menu_link">
+            <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="dashboard.php">Dashboard</a>
             </div>
@@ -124,13 +126,17 @@ if (isset($_POST["logoff"])) {
                 <a href="addstudent.php">Schüler anlegen</a>
             </div>
             <h2>Materialliste</h2>
-            <div class="sidebar_link">
+            <div class="sidebar_link active_menu_link">
                 <i class="rechter_text"></i>
                 <a href="Materialliste.php">Liste</a>
             </div>
             <div class="sidebar_link">
                 <i class="rechter_text"></i>
                 <a href="addmaterials.php">Materialien anlegen</a>
+            </div>
+            <div class="sidebar_link">
+                <i class="rechter_text"></i>
+                <a href="anträge.php">Offene Anträge</a>
             </div>
             <h2>Profil</h2>
             <div class="sidebar_link">

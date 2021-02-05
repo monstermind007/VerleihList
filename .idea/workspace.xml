@@ -27,6 +27,17 @@
   <component name="ChangeListManager">
     <list default="true" id="668f7ab3-ee6b-4418-9c0a-0f322cd11faa" name="Default Changelist" comment="BUG FIX">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/Materialliste.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/Materialliste.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/addmaterials.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/addmaterials.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/addstudent.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/addstudent.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/anträge.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/anträge.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/daten.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/daten.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/messages.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/messages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/profile.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/profile_password.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/profile_password.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/students.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/students.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lehrer/support.php" beforeDir="false" afterPath="$PROJECT_DIR$/Lehrer/support.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +158,8 @@
       <workItem from="1612463879177" duration="532000" />
       <workItem from="1612464436781" duration="261000" />
       <workItem from="1612464723715" duration="232000" />
-      <workItem from="1612465288678" duration="9049000" />
+      <workItem from="1612465288678" duration="21087000" />
+      <workItem from="1612506855983" duration="1244000" />
     </task>
     <task id="LOCAL-00001" summary="+ LOL">
       <created>1611655532134</created>
@@ -429,7 +441,21 @@
       <option name="project" value="LOCAL" />
       <updated>1612472691852</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="BUG FIX">
+      <created>1612480231948</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1612480231948</updated>
+    </task>
+    <task id="LOCAL-00042" summary="BUG FIX">
+      <created>1612480388386</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1612480388386</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
